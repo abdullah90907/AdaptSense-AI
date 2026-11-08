@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://adaptsense-ai-production.up.railway.app/",
+      "permanent": false
+    }
+  ]
+}
