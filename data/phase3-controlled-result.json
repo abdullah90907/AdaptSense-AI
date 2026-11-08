@@ -1,0 +1,484 @@
+{
+  "id": "36488305-dbc5-44ab-a3d7-03fca4eec6ed",
+  "schema_version": "3.0",
+  "created_at": "2026-10-26T11:52:39.826082+00:00",
+  "request": {
+    "replay_id": "69901c35-871e-44e2-81e5-9d71f198ac31",
+    "forecast_id": "eaa368b3-021d-4aac-9675-011f5fd3587c",
+    "question": "Is forecast reliability changing, and what evidence supports that assessment?"
+  },
+  "execution_mode": "controlled_llm_test",
+  "model": "scripted_responses_test_double",
+  "sources": [
+    {
+      "kind": "replay",
+      "id": "69901c35-871e-44e2-81e5-9d71f198ac31",
+      "sha256": "7f9382e10b8bbac40759d50ebcd04e0b0df74aaa1e95101410de6b15ebffda00"
+    },
+    {
+      "kind": "forecast",
+      "id": "eaa368b3-021d-4aac-9675-011f5fd3587c",
+      "sha256": "1ae707f0975267e39e31126789e262905b99f0eb2c92c801d12ccb374ff251b3"
+    },
+    {
+      "kind": "series",
+      "id": "0f3b7948-afc8-4cd3-919e-faa6f844506d",
+      "sha256": "1653b6b198a7c2d48c8496d63d8c29c71817248d2aea192c1601f631faf982e7"
+    }
+  ],
+  "state": "completed",
+  "report": {
+    "status": "no_deterioration_detected",
+    "assessment_summary": "The configured replay rule detected no material supported deterioration; this does not establish distribution stability.",
+    "findings": [
+      {
+        "statement": "The saved assessment is \"no_deterioration_detected\". The error change is 0.17750193169876916, with uncertainty from -2.2431408802212087 to 2.8935177018142273 against a practical threshold of 2.020934357080257. This does not establish a cause or distribution stability.",
+        "template": "The saved assessment is {{E1:/status}}. The error change is {{E1:/delta_mae}}, with uncertainty from {{E1:/delta_mae_bootstrap_interval/0}} to {{E1:/delta_mae_bootstrap_interval/1}} against a practical threshold of {{E1:/practical_delta_threshold}}. This does not establish a cause or distribution stability.",
+        "citations": [
+          {
+            "reference": "E1:/status",
+            "value": "no_deterioration_detected"
+          },
+          {
+            "reference": "E1:/delta_mae",
+            "value": 0.17750193169876916
+          },
+          {
+            "reference": "E1:/delta_mae_bootstrap_interval/0",
+            "value": -2.2431408802212087
+          },
+          {
+            "reference": "E1:/delta_mae_bootstrap_interval/1",
+            "value": 2.8935177018142273
+          },
+          {
+            "reference": "E1:/practical_delta_threshold",
+            "value": 2.020934357080257
+          }
+        ]
+      },
+      {
+        "statement": "Reference model and seasonal-naive errors are 10.104671785401283 and 9.86132511042857; recent errors are 10.282173717100054 and 10.251853411128572. Whether the model beats the recent baseline: false.",
+        "template": "Reference model and seasonal-naive errors are {{E2:/reference/model_mae}} and {{E2:/reference/baseline_mae}}; recent errors are {{E2:/recent/model_mae}} and {{E2:/recent/baseline_mae}}. Whether the model beats the recent baseline: {{E2:/recent/model_better}}.",
+        "citations": [
+          {
+            "reference": "E2:/reference/model_mae",
+            "value": 10.104671785401283
+          },
+          {
+            "reference": "E2:/reference/baseline_mae",
+            "value": 9.86132511042857
+          },
+          {
+            "reference": "E2:/recent/model_mae",
+            "value": 10.282173717100054
+          },
+          {
+            "reference": "E2:/recent/baseline_mae",
+            "value": 10.251853411128572
+          },
+          {
+            "reference": "E2:/recent/model_better",
+            "value": false
+          }
+        ]
+      },
+      {
+        "statement": "Actual means are 226.9417535270143 and 213.0723925766857. Signed recent bias is -2.298308041513225. These describe the observations and do not explain their causes.",
+        "template": "Actual means are {{E3:/reference/actual_mean}} and {{E3:/recent/actual_mean}}. Signed recent bias is {{E3:/recent/signed_bias_actual_minus_point}}. These describe the observations and do not explain their causes.",
+        "citations": [
+          {
+            "reference": "E3:/reference/actual_mean",
+            "value": 226.9417535270143
+          },
+          {
+            "reference": "E3:/recent/actual_mean",
+            "value": 213.0723925766857
+          },
+          {
+            "reference": "E3:/recent/signed_bias_actual_minus_point",
+            "value": -2.298308041513225
+          }
+        ]
+      },
+      {
+        "statement": "The largest recent window error is 30.349333560385045, following cutoff \"2014-12-24T00:00:00+00:00\". Ranking a window by error does not establish an anomaly.",
+        "template": "The largest recent window error is {{E5:/worst_windows/0/mae}}, following cutoff {{E5:/worst_windows/0/cutoff}}. Ranking a window by error does not establish an anomaly.",
+        "citations": [
+          {
+            "reference": "E5:/worst_windows/0/mae",
+            "value": 30.349333560385045
+          },
+          {
+            "reference": "E5:/worst_windows/0/cutoff",
+            "value": "2014-12-24T00:00:00+00:00"
+          }
+        ]
+      },
+      {
+        "statement": "The leading forecast step has a descriptive error change of 1.0992644019582052. Per-lead effects should be inspected alongside the aggregate assessment.",
+        "template": "The leading forecast step has a descriptive error change of {{E4:/leads/0/delta_mae}}. Per-lead effects should be inspected alongside the aggregate assessment.",
+        "citations": [
+          {
+            "reference": "E4:/leads/0/delta_mae",
+            "value": 1.0992644019582052
+          }
+        ]
+      },
+      {
+        "statement": "The optional saved forecast has mean absolute error 11.833980992903806 with 0 pending readings. Its legacy within-forecast reliability comparison is confounded by lead time.",
+        "template": "The optional saved forecast has mean absolute error {{E6:/metrics/mae}} with {{E6:/pending}} pending readings. Its legacy within-forecast reliability comparison is confounded by lead time.",
+        "citations": [
+          {
+            "reference": "E6:/metrics/mae",
+            "value": 11.833980992903806
+          },
+          {
+            "reference": "E6:/pending",
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "hypotheses": [],
+    "next_checks": [
+      "Review the worst completed windows and obtain aligned weather and calendar measurements before evaluating possible external explanations."
+    ],
+    "validation": {
+      "status_matches_analytics": true,
+      "references_resolved": true,
+      "numbers_rendered_from_evidence": true,
+      "qualitative_semantics": "not formally verified"
+    }
+  },
+  "tool_trace": [
+    {
+      "evidence_id": "E1",
+      "tool": "replay_summary",
+      "arguments": {},
+      "result": {
+        "data": {
+          "status": "no_deterioration_detected",
+          "reference": {
+            "start": "2014-03-27T00:00:00+00:00",
+            "end": "2014-08-13T00:00:00+00:00",
+            "origins": 20,
+            "observations": 140,
+            "mae": 10.104671785401283,
+            "rmse": 12.930087828898523,
+            "baseline_mae": 9.86132511042857,
+            "skill_vs_baseline": -0.024676873771798613,
+            "q10_q90_coverage": 0.8214285714285714
+          },
+          "recent": {
+            "start": "2014-08-14T00:00:00+00:00",
+            "end": "2014-12-31T00:00:00+00:00",
+            "origins": 20,
+            "observations": 140,
+            "mae": 10.282173717100054,
+            "rmse": 13.589783315019417,
+            "baseline_mae": 10.251853411128572,
+            "skill_vs_baseline": -0.002957543846517474,
+            "q10_q90_coverage": 0.8357142857142857
+          },
+          "delta_mae": 0.17750193169876916,
+          "practical_delta_threshold": 2.020934357080257,
+          "reference_history_scale": 15.038100369142855,
+          "recent_half_maes": [
+            8.95174691520703,
+            11.61260051899308
+          ],
+          "sustained": false,
+          "delta_mae_bootstrap_interval": [
+            -2.2431408802212087,
+            2.8935177018142273
+          ],
+          "uncertainty": {
+            "method": "independent circular moving-block bootstrap within each period",
+            "block_length_origins": 3,
+            "resamples": 2000,
+            "seed": 20261026,
+            "interval_level": 0.95,
+            "interpretation": "Descriptive uncertainty under within-period weak stationarity; not a calibrated drift probability or sequential alarm."
+          },
+          "per_lead": [
+            {
+              "lead": 1,
+              "reference_mae": 7.03926168713906,
+              "recent_mae": 8.138526089097265,
+              "delta_mae": 1.0992644019582052
+            },
+            {
+              "lead": 2,
+              "reference_mae": 14.595294475582813,
+              "recent_mae": 9.969981569103124,
+              "delta_mae": -4.625312906479689
+            },
+            {
+              "lead": 3,
+              "reference_mae": 5.77591056090547,
+              "recent_mae": 8.878691507371872,
+              "delta_mae": 3.1027809464664022
+            },
+            {
+              "lead": 4,
+              "reference_mae": 8.21218793300703,
+              "recent_mae": 12.909233775918358,
+              "delta_mae": 4.6970458429113275
+            },
+            {
+              "lead": 5,
+              "reference_mae": 16.274999559609764,
+              "recent_mae": 12.56972992005664,
+              "delta_mae": -3.7052696395531246
+            },
+            {
+              "lead": 6,
+              "reference_mae": 10.820602408376567,
+              "recent_mae": 9.368031888105861,
+              "delta_mae": -1.4525705202707062
+            },
+            {
+              "lead": 7,
+              "reference_mae": 8.014445873188286,
+              "recent_mae": 10.141021270047265,
+              "delta_mae": 2.1265753968589785
+            }
+          ],
+          "decision_rule": "Supported only when lower interval bound exceeds max(20% reference MAE, 10% pre-reference seasonal-difference scale, 1e-9) and both recent halves exceed reference MAE by that threshold.",
+          "unit": "GW (source units)",
+          "model": "amazon/chronos-bolt-tiny",
+          "revision": "a0e552de83495b5c28c14c71c374f3e33280b340",
+          "limitations": [
+            "Retrospective replay, not a prospective production alarm.",
+            "Equal lead mix and fixed context length control horizon and context-length confounding; seasonal regimes and weather remain possible explanations.",
+            "Bootstrap uncertainty depends on block length and within-period stability; no repeated-testing correction.",
+            "No causal attribution, model retraining, or guarantee of pretraining-data independence."
+          ]
+        },
+        "source_paths": [
+          "/assessment",
+          "/unit",
+          "/model",
+          "/revision",
+          "/limitations"
+        ]
+      }
+    },
+    {
+      "evidence_id": "E2",
+      "tool": "compare_baseline",
+      "arguments": {},
+      "result": {
+        "data": {
+          "reference": {
+            "model_mae": 10.104671785401283,
+            "baseline_mae": 9.86132511042857,
+            "skill": -0.024676873771798613,
+            "model_better": false
+          },
+          "recent": {
+            "model_mae": 10.282173717100054,
+            "baseline_mae": 10.251853411128572,
+            "skill": -0.002957543846517474,
+            "model_better": false
+          },
+          "model_delta_mae": 0.17750193169877093,
+          "baseline_delta_mae": 0.39052830070000155
+        },
+        "source_paths": [
+          "/origins"
+        ],
+        "calculation": "MAE recomputed from actual minus point/baseline_point; skill = 1 - model MAE / baseline MAE. Baseline comparison is descriptive, not causal."
+      }
+    },
+    {
+      "evidence_id": "E3",
+      "tool": "inspect_patterns",
+      "arguments": {},
+      "result": {
+        "data": {
+          "reference": {
+            "actual_mean": 226.9417535270143,
+            "actual_std": 22.685681803723583,
+            "signed_bias_actual_minus_point": 4.240865356499499,
+            "outside_interval_count": 25,
+            "count": 140
+          },
+          "recent": {
+            "actual_mean": 213.0723925766857,
+            "actual_std": 19.54683160931683,
+            "signed_bias_actual_minus_point": -2.298308041513225,
+            "outside_interval_count": 23,
+            "count": 140
+          }
+        },
+        "source_paths": [
+          "/origins"
+        ],
+        "calculation": "Descriptive actual mean/population standard deviation and signed residual mean; no causal or drift significance test."
+      }
+    },
+    {
+      "evidence_id": "E4",
+      "tool": "inspect_leads",
+      "arguments": {},
+      "result": {
+        "data": {
+          "leads": [
+            {
+              "lead": 1,
+              "reference_mae": 7.03926168713906,
+              "recent_mae": 8.138526089097265,
+              "delta_mae": 1.0992644019582052
+            },
+            {
+              "lead": 2,
+              "reference_mae": 14.595294475582813,
+              "recent_mae": 9.969981569103124,
+              "delta_mae": -4.625312906479689
+            },
+            {
+              "lead": 3,
+              "reference_mae": 5.77591056090547,
+              "recent_mae": 8.878691507371872,
+              "delta_mae": 3.1027809464664022
+            },
+            {
+              "lead": 4,
+              "reference_mae": 8.21218793300703,
+              "recent_mae": 12.909233775918358,
+              "delta_mae": 4.6970458429113275
+            },
+            {
+              "lead": 5,
+              "reference_mae": 16.274999559609764,
+              "recent_mae": 12.56972992005664,
+              "delta_mae": -3.7052696395531246
+            },
+            {
+              "lead": 6,
+              "reference_mae": 10.820602408376567,
+              "recent_mae": 9.368031888105861,
+              "delta_mae": -1.4525705202707062
+            },
+            {
+              "lead": 7,
+              "reference_mae": 8.014445873188286,
+              "recent_mae": 10.141021270047265,
+              "delta_mae": 2.1265753968589785
+            }
+          ]
+        },
+        "source_paths": [
+          "/assessment/per_lead"
+        ]
+      }
+    },
+    {
+      "evidence_id": "E5",
+      "tool": "inspect_windows",
+      "arguments": {
+        "period": "recent",
+        "limit": 3
+      },
+      "result": {
+        "data": {
+          "period": "recent",
+          "worst_windows": [
+            {
+              "cutoff": "2014-12-24T00:00:00+00:00",
+              "start": "2014-12-25T00:00:00+00:00",
+              "end": "2014-12-31T00:00:00+00:00",
+              "mae": 30.349333560385045,
+              "baseline_mae": 28.38257318028571
+            },
+            {
+              "cutoff": "2014-11-26T00:00:00+00:00",
+              "start": "2014-11-27T00:00:00+00:00",
+              "end": "2014-12-03T00:00:00+00:00",
+              "mae": 13.819353888400668,
+              "baseline_mae": 13.373724611428571
+            },
+            {
+              "cutoff": "2014-08-20T00:00:00+00:00",
+              "start": "2014-08-21T00:00:00+00:00",
+              "end": "2014-08-27T00:00:00+00:00",
+              "mae": 13.618165499848212,
+              "baseline_mae": 12.262611566
+            }
+          ]
+        },
+        "source_paths": [
+          "/origins"
+        ],
+        "calculation": "Top completed forecast blocks ranked by MAE; largest error is not automatically an anomaly."
+      }
+    },
+    {
+      "evidence_id": "E6",
+      "tool": "inspect_forecast",
+      "arguments": {},
+      "result": {
+        "data": {
+          "available": true,
+          "forecast_id": "eaa368b3-021d-4aac-9675-011f5fd3587c",
+          "cutoff": "2014-10-27T00:00:00+00:00",
+          "matched": 32,
+          "pending": 0,
+          "metrics": {
+            "mae": 11.833980992903806,
+            "rmse": 14.126661451179679,
+            "scaled_mae": 0.8792123992295808,
+            "q10_q90_coverage": 0.9375
+          },
+          "reliability": {
+            "status": "no_degradation_detected",
+            "method": "legacy_within_forecast_lead_comparison",
+            "advisory": "Lead-time confounded; use /replays for fixed-lead period evidence.",
+            "baseline_mae": 13.944440727195797,
+            "recent_mae": 9.723521258611814,
+            "window_size": 16,
+            "rule": "At least 8 errors per half; recent MAE > max(1.5 * baseline MAE, baseline MAE + historical mean absolute first difference)"
+          },
+          "change": {
+            "mean_shift_in_historical_std": 0.7767630377670677,
+            "flag": false,
+            "interpretation": "Descriptive level change; seasonality or external events may explain it. Not a causal conclusion."
+          },
+          "limitations": "Quantiles are model estimates, not calibrated guarantees. Reliability compares early and late leads in this forecast; horizon effects may contribute. Actual series identity is caller supplied."
+        },
+        "source_paths": [
+          "forecast:/predictions",
+          "series:/readings"
+        ],
+        "calculation": "Existing Phase 1 evaluation against replay source actuals; its reliability heuristic is lead-time confounded."
+      }
+    }
+  ],
+  "provider_responses": [
+    {
+      "id": "controlled_response_1",
+      "model": "scripted_responses_test_double",
+      "usage": null
+    },
+    {
+      "id": "controlled_response_2",
+      "model": "scripted_responses_test_double",
+      "usage": null
+    },
+    {
+      "id": "controlled_response_3",
+      "model": "scripted_responses_test_double",
+      "usage": null
+    }
+  ],
+  "elapsed_seconds": 0.00520189999951981,
+  "limitations": [
+    "Retrospective replay, not a prospective production alarm.",
+    "Equal lead mix and fixed context length control horizon and context-length confounding; seasonal regimes and weather remain possible explanations.",
+    "Bootstrap uncertainty depends on block length and within-period stability; no repeated-testing correction.",
+    "No causal attribution, model retraining, or guarantee of pretraining-data independence.",
+    "Citations and numeric substitution are validated; qualitative LLM interpretations still require review."
+  ]
+}

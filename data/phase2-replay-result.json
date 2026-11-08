@@ -1,0 +1,3799 @@
+{
+  "id": "69901c35-871e-44e2-81e5-9d71f198ac31",
+  "schema_version": "2.0",
+  "mode": "historical_replay",
+  "created_at": "2026-10-26T11:31:41.646216+00:00",
+  "request": {
+    "series_id": "0f3b7948-afc8-4cd3-919e-faa6f844506d",
+    "first_cutoff": "2014-03-26T00:00:00Z",
+    "context_length": 56,
+    "horizon": 7,
+    "seasonal_period": 7,
+    "period_origins": 20
+  },
+  "model": "amazon/chronos-bolt-tiny",
+  "revision": "a0e552de83495b5c28c14c71c374f3e33280b340",
+  "unit": "GW (source units)",
+  "baseline": "seasonal naive repeating the last observed seasonal cycle",
+  "assessment": {
+    "status": "no_deterioration_detected",
+    "reference": {
+      "start": "2014-03-27T00:00:00+00:00",
+      "end": "2014-08-13T00:00:00+00:00",
+      "origins": 20,
+      "observations": 140,
+      "mae": 10.104671785401283,
+      "rmse": 12.930087828898523,
+      "baseline_mae": 9.86132511042857,
+      "skill_vs_baseline": -0.024676873771798613,
+      "q10_q90_coverage": 0.8214285714285714
+    },
+    "recent": {
+      "start": "2014-08-14T00:00:00+00:00",
+      "end": "2014-12-31T00:00:00+00:00",
+      "origins": 20,
+      "observations": 140,
+      "mae": 10.282173717100054,
+      "rmse": 13.589783315019417,
+      "baseline_mae": 10.251853411128572,
+      "skill_vs_baseline": -0.002957543846517474,
+      "q10_q90_coverage": 0.8357142857142857
+    },
+    "delta_mae": 0.17750193169876916,
+    "practical_delta_threshold": 2.020934357080257,
+    "reference_history_scale": 15.038100369142855,
+    "recent_half_maes": [
+      8.95174691520703,
+      11.61260051899308
+    ],
+    "sustained": false,
+    "delta_mae_bootstrap_interval": [
+      -2.2431408802212087,
+      2.8935177018142273
+    ],
+    "uncertainty": {
+      "method": "independent circular moving-block bootstrap within each period",
+      "block_length_origins": 3,
+      "resamples": 2000,
+      "seed": 20261026,
+      "interval_level": 0.95,
+      "interpretation": "Descriptive uncertainty under within-period weak stationarity; not a calibrated drift probability or sequential alarm."
+    },
+    "per_lead": [
+      {
+        "lead": 1,
+        "reference_mae": 7.03926168713906,
+        "recent_mae": 8.138526089097265,
+        "delta_mae": 1.0992644019582052
+      },
+      {
+        "lead": 2,
+        "reference_mae": 14.595294475582813,
+        "recent_mae": 9.969981569103124,
+        "delta_mae": -4.625312906479689
+      },
+      {
+        "lead": 3,
+        "reference_mae": 5.77591056090547,
+        "recent_mae": 8.878691507371872,
+        "delta_mae": 3.1027809464664022
+      },
+      {
+        "lead": 4,
+        "reference_mae": 8.21218793300703,
+        "recent_mae": 12.909233775918358,
+        "delta_mae": 4.6970458429113275
+      },
+      {
+        "lead": 5,
+        "reference_mae": 16.274999559609764,
+        "recent_mae": 12.56972992005664,
+        "delta_mae": -3.7052696395531246
+      },
+      {
+        "lead": 6,
+        "reference_mae": 10.820602408376567,
+        "recent_mae": 9.368031888105861,
+        "delta_mae": -1.4525705202707062
+      },
+      {
+        "lead": 7,
+        "reference_mae": 8.014445873188286,
+        "recent_mae": 10.141021270047265,
+        "delta_mae": 2.1265753968589785
+      }
+    ],
+    "decision_rule": "Supported only when lower interval bound exceeds max(20% reference MAE, 10% pre-reference seasonal-difference scale, 1e-9) and both recent halves exceed reference MAE by that threshold."
+  },
+  "origins": [
+    {
+      "cutoff": "2014-03-26T00:00:00+00:00",
+      "context_start": "2014-01-30T00:00:00+00:00",
+      "period": "reference",
+      "mae": 15.659559889523434,
+      "evidence": [
+        {
+          "timestamp": "2014-03-27T00:00:00+00:00",
+          "lead": 1,
+          "actual": 221.790532056,
+          "point": 218.84425354003906,
+          "q10": 195.98275756835938,
+          "q90": 242.8234100341797,
+          "baseline_point": 226.828705024,
+          "absolute_error": 2.946278515960927,
+          "baseline_absolute_error": 5.038172967999998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-03-28T00:00:00+00:00",
+          "lead": 2,
+          "actual": 214.881351502,
+          "point": 209.27450561523438,
+          "q10": 182.4688720703125,
+          "q90": 235.54759216308594,
+          "baseline_point": 221.975617464,
+          "absolute_error": 5.606845886765626,
+          "baseline_absolute_error": 7.094265962000009,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-03-29T00:00:00+00:00",
+          "lead": 3,
+          "actual": 185.212055566,
+          "point": 195.4447021484375,
+          "q10": 167.42135620117188,
+          "q90": 223.36611938476562,
+          "baseline_point": 186.249094462,
+          "absolute_error": 10.232646582437496,
+          "baseline_absolute_error": 1.0370388959999843,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-03-30T00:00:00+00:00",
+          "lead": 4,
+          "actual": 181.795096428,
+          "point": 193.46359252929688,
+          "q10": 164.2436065673828,
+          "q90": 222.16452026367188,
+          "baseline_point": 179.274619262,
+          "absolute_error": 11.668496101296881,
+          "baseline_absolute_error": 2.5204771660000063,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-03-31T00:00:00+00:00",
+          "lead": 5,
+          "actual": 230.663662492,
+          "point": 204.10240173339844,
+          "q10": 173.45919799804688,
+          "q90": 232.9164276123047,
+          "baseline_point": 213.566742194,
+          "absolute_error": 26.56126075860155,
+          "baseline_absolute_error": 17.096920297999986,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-01T00:00:00+00:00",
+          "lead": 6,
+          "actual": 253.290102574,
+          "point": 215.25753784179688,
+          "q10": 183.92269897460938,
+          "q90": 245.1943359375,
+          "baseline_point": 214.613345464,
+          "absolute_error": 38.03256473220313,
+          "baseline_absolute_error": 38.67675711000001,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-04-02T00:00:00+00:00",
+          "lead": 7,
+          "actual": 235.528924916,
+          "point": 220.96009826660156,
+          "q10": 189.85426330566406,
+          "q90": 251.44126892089844,
+          "baseline_point": 217.41287881,
+          "absolute_error": 14.568826649398432,
+          "baseline_absolute_error": 18.116046106,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-04-02T00:00:00+00:00",
+      "context_start": "2014-02-06T00:00:00+00:00",
+      "period": "reference",
+      "mae": 7.027077493703124,
+      "evidence": [
+        {
+          "timestamp": "2014-04-03T00:00:00+00:00",
+          "lead": 1,
+          "actual": 222.700405572,
+          "point": 226.10015869140625,
+          "q10": 203.53135681152344,
+          "q90": 248.62362670898438,
+          "baseline_point": 221.790532056,
+          "absolute_error": 3.399753119406256,
+          "baseline_absolute_error": 0.9098735160000047,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-04T00:00:00+00:00",
+          "lead": 2,
+          "actual": 218.932024318,
+          "point": 213.0172882080078,
+          "q10": 186.4046173095703,
+          "q90": 238.17044067382812,
+          "baseline_point": 214.881351502,
+          "absolute_error": 5.914736109992191,
+          "baseline_absolute_error": 4.050672816000002,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-05T00:00:00+00:00",
+          "lead": 3,
+          "actual": 192.15175974000002,
+          "point": 199.91586303710938,
+          "q10": 172.22190856933594,
+          "q90": 226.80577087402344,
+          "baseline_point": 185.212055566,
+          "absolute_error": 7.764103297109358,
+          "baseline_absolute_error": 6.939704174000013,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-06T00:00:00+00:00",
+          "lead": 4,
+          "actual": 182.59510412,
+          "point": 198.82818603515625,
+          "q10": 170.14675903320312,
+          "q90": 227.15643310546875,
+          "baseline_point": 181.795096428,
+          "absolute_error": 16.233081915156248,
+          "baseline_absolute_error": 0.8000076920000083,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-07T00:00:00+00:00",
+          "lead": 5,
+          "actual": 218.474476344,
+          "point": 209.89773559570312,
+          "q10": 180.36099243164062,
+          "q90": 238.60226440429688,
+          "baseline_point": 230.663662492,
+          "absolute_error": 8.576740748296885,
+          "baseline_absolute_error": 12.189186147999976,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-08T00:00:00+00:00",
+          "lead": 6,
+          "actual": 226.201756238,
+          "point": 224.43182373046875,
+          "q10": 194.04713439941406,
+          "q90": 254.55148315429688,
+          "baseline_point": 253.290102574,
+          "absolute_error": 1.7699325075312515,
+          "baseline_absolute_error": 27.088346336,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-09T00:00:00+00:00",
+          "lead": 7,
+          "actual": 225.599344182,
+          "point": 231.1305389404297,
+          "q10": 201.15423583984375,
+          "q90": 261.634765625,
+          "baseline_point": 235.528924916,
+          "absolute_error": 5.5311947584296774,
+          "baseline_absolute_error": 9.929580733999984,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-04-09T00:00:00+00:00",
+      "context_start": "2014-02-13T00:00:00+00:00",
+      "period": "reference",
+      "mae": 6.673775672453124,
+      "evidence": [
+        {
+          "timestamp": "2014-04-10T00:00:00+00:00",
+          "lead": 1,
+          "actual": 223.880770978,
+          "point": 223.83631896972656,
+          "q10": 206.47914123535156,
+          "q90": 241.74366760253906,
+          "baseline_point": 222.700405572,
+          "absolute_error": 0.044452008273424326,
+          "baseline_absolute_error": 1.1803654059999928,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-11T00:00:00+00:00",
+          "lead": 2,
+          "actual": 220.39874308,
+          "point": 208.67018127441406,
+          "q10": 189.10108947753906,
+          "q90": 226.20529174804688,
+          "baseline_point": 218.932024318,
+          "absolute_error": 11.72856180558594,
+          "baseline_absolute_error": 1.4667187619999993,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-12T00:00:00+00:00",
+          "lead": 3,
+          "actual": 189.730219148,
+          "point": 191.35311889648438,
+          "q10": 171.84393310546875,
+          "q90": 209.37594604492188,
+          "baseline_point": 192.15175974000002,
+          "absolute_error": 1.6228997484843717,
+          "baseline_absolute_error": 2.4215405920000137,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-13T00:00:00+00:00",
+          "lead": 4,
+          "actual": 180.797405356,
+          "point": 191.94601440429688,
+          "q10": 171.73829650878906,
+          "q90": 210.22523498535156,
+          "baseline_point": 182.59510412,
+          "absolute_error": 11.148609048296862,
+          "baseline_absolute_error": 1.797698763999989,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-14T00:00:00+00:00",
+          "lead": 5,
+          "actual": 212.901439274,
+          "point": 208.40237426757812,
+          "q10": 187.5580596923828,
+          "q90": 226.25221252441406,
+          "baseline_point": 218.474476344,
+          "absolute_error": 4.499065006421887,
+          "baseline_absolute_error": 5.573037069999998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-15T00:00:00+00:00",
+          "lead": 6,
+          "actual": 216.103419866,
+          "point": 223.27886962890625,
+          "q10": 202.51535034179688,
+          "q90": 241.70082092285156,
+          "baseline_point": 226.201756238,
+          "absolute_error": 7.175449762906254,
+          "baseline_absolute_error": 10.098336372000006,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-16T00:00:00+00:00",
+          "lead": 7,
+          "actual": 218.360304206,
+          "point": 228.85769653320312,
+          "q10": 209.8307647705078,
+          "q90": 246.95944213867188,
+          "baseline_point": 225.599344182,
+          "absolute_error": 10.49739232720313,
+          "baseline_absolute_error": 7.239039976000015,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-04-16T00:00:00+00:00",
+      "context_start": "2014-02-20T00:00:00+00:00",
+      "period": "reference",
+      "mae": 12.667384229532368,
+      "evidence": [
+        {
+          "timestamp": "2014-04-17T00:00:00+00:00",
+          "lead": 1,
+          "actual": 215.11368572,
+          "point": 221.5264892578125,
+          "q10": 203.8328399658203,
+          "q90": 240.33438110351562,
+          "baseline_point": 223.880770978,
+          "absolute_error": 6.4128035378124935,
+          "baseline_absolute_error": 8.76708525799998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-18T00:00:00+00:00",
+          "lead": 2,
+          "actual": 177.74740577400001,
+          "point": 209.2143096923828,
+          "q10": 189.2936248779297,
+          "q90": 227.71153259277344,
+          "baseline_point": 220.39874308,
+          "absolute_error": 31.466903918382798,
+          "baseline_absolute_error": 42.65133730599999,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-04-19T00:00:00+00:00",
+          "lead": 3,
+          "actual": 183.793998112,
+          "point": 190.1099090576172,
+          "q10": 170.6553192138672,
+          "q90": 208.7773895263672,
+          "baseline_point": 189.730219148,
+          "absolute_error": 6.3159109456171905,
+          "baseline_absolute_error": 5.936221036000006,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-20T00:00:00+00:00",
+          "lead": 4,
+          "actual": 178.949754048,
+          "point": 191.28941345214844,
+          "q10": 171.26866149902344,
+          "q90": 209.75930786132812,
+          "baseline_point": 180.797405356,
+          "absolute_error": 12.339659404148449,
+          "baseline_absolute_error": 1.8476513080000245,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-21T00:00:00+00:00",
+          "lead": 5,
+          "actual": 181.331985508,
+          "point": 209.04412841796875,
+          "q10": 188.0261993408203,
+          "q90": 226.79598999023438,
+          "baseline_point": 212.901439274,
+          "absolute_error": 27.712142909968748,
+          "baseline_absolute_error": 31.56945376600001,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-04-22T00:00:00+00:00",
+          "lead": 6,
+          "actual": 219.845587538,
+          "point": 220.93951416015625,
+          "q10": 200.1930389404297,
+          "q90": 239.55001831054688,
+          "baseline_point": 216.103419866,
+          "absolute_error": 1.0939266221562605,
+          "baseline_absolute_error": 3.7421676719999937,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-23T00:00:00+00:00",
+          "lead": 7,
+          "actual": 218.903697038,
+          "point": 222.23403930664062,
+          "q10": 203.7001953125,
+          "q90": 240.0130615234375,
+          "baseline_point": 218.360304206,
+          "absolute_error": 3.330342268640635,
+          "baseline_absolute_error": 0.543392831999995,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-04-23T00:00:00+00:00",
+      "context_start": "2014-02-27T00:00:00+00:00",
+      "period": "reference",
+      "mae": 7.787130530108263,
+      "evidence": [
+        {
+          "timestamp": "2014-04-24T00:00:00+00:00",
+          "lead": 1,
+          "actual": 217.970766998,
+          "point": 216.01162719726562,
+          "q10": 198.05484008789062,
+          "q90": 236.03640747070312,
+          "baseline_point": 215.11368572,
+          "absolute_error": 1.9591398007343628,
+          "baseline_absolute_error": 2.8570812779999812,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-25T00:00:00+00:00",
+          "lead": 2,
+          "actual": 189.681557562,
+          "point": 201.14328002929688,
+          "q10": 181.49803161621094,
+          "q90": 221.1395263671875,
+          "baseline_point": 177.74740577400001,
+          "absolute_error": 11.46172246729688,
+          "baseline_absolute_error": 11.93415178799998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-26T00:00:00+00:00",
+          "lead": 3,
+          "actual": 189.352187122,
+          "point": 187.02330017089844,
+          "q10": 167.85971069335938,
+          "q90": 206.49891662597656,
+          "baseline_point": 183.793998112,
+          "absolute_error": 2.328886951101566,
+          "baseline_absolute_error": 5.558189010000007,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-27T00:00:00+00:00",
+          "lead": 4,
+          "actual": 186.17611612,
+          "point": 187.31246948242188,
+          "q10": 167.53155517578125,
+          "q90": 207.15557861328125,
+          "baseline_point": 178.949754048,
+          "absolute_error": 1.136353362421886,
+          "baseline_absolute_error": 7.226362072000001,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-28T00:00:00+00:00",
+          "lead": 5,
+          "actual": 222.725282768,
+          "point": 200.58750915527344,
+          "q10": 180.4013671875,
+          "q90": 220.46414184570312,
+          "baseline_point": 181.331985508,
+          "absolute_error": 22.137773612726562,
+          "baseline_absolute_error": 41.39329726,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-04-29T00:00:00+00:00",
+          "lead": 6,
+          "actual": 226.893987516,
+          "point": 216.07888793945312,
+          "q10": 195.05987548828125,
+          "q90": 236.822021484375,
+          "baseline_point": 219.845587538,
+          "absolute_error": 10.815099576546885,
+          "baseline_absolute_error": 7.04839997800002,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-04-30T00:00:00+00:00",
+          "lead": 7,
+          "actual": 227.838250562,
+          "point": 223.1673126220703,
+          "q10": 203.1891632080078,
+          "q90": 243.58270263671875,
+          "baseline_point": 218.903697038,
+          "absolute_error": 4.670937939929701,
+          "baseline_absolute_error": 8.934553524000023,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-04-30T00:00:00+00:00",
+      "context_start": "2014-03-06T00:00:00+00:00",
+      "period": "reference",
+      "mae": 22.14821691453125,
+      "evidence": [
+        {
+          "timestamp": "2014-05-01T00:00:00+00:00",
+          "lead": 1,
+          "actual": 234.15135243,
+          "point": 216.34278869628906,
+          "q10": 199.748291015625,
+          "q90": 232.9075927734375,
+          "baseline_point": 217.970766998,
+          "absolute_error": 17.80856373371094,
+          "baseline_absolute_error": 16.180585432000015,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-05-02T00:00:00+00:00",
+          "lead": 2,
+          "actual": 234.875479598,
+          "point": 199.54205322265625,
+          "q10": 180.99522399902344,
+          "q90": 216.2933349609375,
+          "baseline_point": 189.681557562,
+          "absolute_error": 35.33342637534375,
+          "baseline_absolute_error": 45.193922036000004,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-05-03T00:00:00+00:00",
+          "lead": 3,
+          "actual": 205.593756248,
+          "point": 187.3361358642578,
+          "q10": 169.06149291992188,
+          "q90": 203.71841430664062,
+          "baseline_point": 189.352187122,
+          "absolute_error": 18.257620383742193,
+          "baseline_absolute_error": 16.241569126,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-05-04T00:00:00+00:00",
+          "lead": 4,
+          "actual": 203.667041488,
+          "point": 189.8849639892578,
+          "q10": 171.0483856201172,
+          "q90": 207.1384735107422,
+          "baseline_point": 186.17611612,
+          "absolute_error": 13.782077498742183,
+          "baseline_absolute_error": 17.490925368000006,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-05T00:00:00+00:00",
+          "lead": 5,
+          "actual": 237.88574823,
+          "point": 203.95938110351562,
+          "q10": 185.03611755371094,
+          "q90": 221.32025146484375,
+          "baseline_point": 222.725282768,
+          "absolute_error": 33.926367126484365,
+          "baseline_absolute_error": 15.16046546199999,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-05-06T00:00:00+00:00",
+          "lead": 6,
+          "actual": 240.61531435,
+          "point": 219.98727416992188,
+          "q10": 200.5234375,
+          "q90": 237.97146606445312,
+          "baseline_point": 226.893987516,
+          "absolute_error": 20.62804018007813,
+          "baseline_absolute_error": 13.721326833999996,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-05-07T00:00:00+00:00",
+          "lead": 7,
+          "actual": 240.363389046,
+          "point": 225.0619659423828,
+          "q10": 206.75592041015625,
+          "q90": 242.1188201904297,
+          "baseline_point": 227.838250562,
+          "absolute_error": 15.301423103617196,
+          "baseline_absolute_error": 12.525138483999996,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-05-07T00:00:00+00:00",
+      "context_start": "2014-03-13T00:00:00+00:00",
+      "period": "reference",
+      "mae": 10.670522725750004,
+      "evidence": [
+        {
+          "timestamp": "2014-05-08T00:00:00+00:00",
+          "lead": 1,
+          "actual": 241.350194426,
+          "point": 229.29872131347656,
+          "q10": 213.0725555419922,
+          "q90": 244.40640258789062,
+          "baseline_point": 234.15135243,
+          "absolute_error": 12.05147311252344,
+          "baseline_absolute_error": 7.198841995999999,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-09T00:00:00+00:00",
+          "lead": 2,
+          "actual": 236.749702332,
+          "point": 213.07052612304688,
+          "q10": 193.47161865234375,
+          "q90": 229.0127410888672,
+          "baseline_point": 234.875479598,
+          "absolute_error": 23.679176208953123,
+          "baseline_absolute_error": 1.874222734,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-05-10T00:00:00+00:00",
+          "lead": 3,
+          "actual": 206.34550193,
+          "point": 196.72817993164062,
+          "q10": 176.641845703125,
+          "q90": 213.96531677246094,
+          "baseline_point": 205.593756248,
+          "absolute_error": 9.617321998359387,
+          "baseline_absolute_error": 0.7517456820000064,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-11T00:00:00+00:00",
+          "lead": 4,
+          "actual": 192.715953152,
+          "point": 197.86126708984375,
+          "q10": 176.978271484375,
+          "q90": 216.1234588623047,
+          "baseline_point": 203.667041488,
+          "absolute_error": 5.145313937843753,
+          "baseline_absolute_error": 10.951088335999998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-12T00:00:00+00:00",
+          "lead": 5,
+          "actual": 229.354390942,
+          "point": 214.0291748046875,
+          "q10": 192.13441467285156,
+          "q90": 232.5852508544922,
+          "baseline_point": 237.88574823,
+          "absolute_error": 15.325216137312509,
+          "baseline_absolute_error": 8.531357287999981,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-13T00:00:00+00:00",
+          "lead": 6,
+          "actual": 230.016404656,
+          "point": 228.6572723388672,
+          "q10": 206.32553100585938,
+          "q90": 248.7615966796875,
+          "baseline_point": 240.61531435,
+          "absolute_error": 1.3591323171328042,
+          "baseline_absolute_error": 10.598909694000014,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-14T00:00:00+00:00",
+          "lead": 7,
+          "actual": 224.46371096,
+          "point": 231.979736328125,
+          "q10": 211.07101440429688,
+          "q90": 251.9780731201172,
+          "baseline_point": 240.363389046,
+          "absolute_error": 7.516025368125014,
+          "baseline_absolute_error": 15.899678086000023,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-05-14T00:00:00+00:00",
+      "context_start": "2014-03-20T00:00:00+00:00",
+      "period": "reference",
+      "mae": 5.61816685005469,
+      "evidence": [
+        {
+          "timestamp": "2014-05-15T00:00:00+00:00",
+          "lead": 1,
+          "actual": 216.959205084,
+          "point": 225.3545684814453,
+          "q10": 208.39804077148438,
+          "q90": 241.73419189453125,
+          "baseline_point": 241.350194426,
+          "absolute_error": 8.395363397445323,
+          "baseline_absolute_error": 24.39098934200001,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-16T00:00:00+00:00",
+          "lead": 2,
+          "actual": 212.630536434,
+          "point": 214.5738067626953,
+          "q10": 194.57981872558594,
+          "q90": 231.49755859375,
+          "baseline_point": 236.749702332,
+          "absolute_error": 1.94327032869532,
+          "baseline_absolute_error": 24.119165898000006,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-17T00:00:00+00:00",
+          "lead": 3,
+          "actual": 188.999065818,
+          "point": 195.75326538085938,
+          "q10": 175.64697265625,
+          "q90": 214.16278076171875,
+          "baseline_point": 206.34550193,
+          "absolute_error": 6.754199562859384,
+          "baseline_absolute_error": 17.34643611200002,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-18T00:00:00+00:00",
+          "lead": 4,
+          "actual": 181.507468084,
+          "point": 198.07754516601562,
+          "q10": 177.03724670410156,
+          "q90": 216.91217041015625,
+          "baseline_point": 192.715953152,
+          "absolute_error": 16.570077082015615,
+          "baseline_absolute_error": 11.208485067999987,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-19T00:00:00+00:00",
+          "lead": 5,
+          "actual": 217.062319264,
+          "point": 216.49969482421875,
+          "q10": 194.0869598388672,
+          "q90": 234.91220092773438,
+          "baseline_point": 229.354390942,
+          "absolute_error": 0.5626244397812457,
+          "baseline_absolute_error": 12.292071678000013,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-20T00:00:00+00:00",
+          "lead": 6,
+          "actual": 224.377063876,
+          "point": 226.06436157226562,
+          "q10": 203.83181762695312,
+          "q90": 246.08023071289062,
+          "baseline_point": 230.016404656,
+          "absolute_error": 1.687297696265631,
+          "baseline_absolute_error": 5.639340779999998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-21T00:00:00+00:00",
+          "lead": 7,
+          "actual": 221.94096546,
+          "point": 225.3553009033203,
+          "q10": 205.09536743164062,
+          "q90": 245.43612670898438,
+          "baseline_point": 224.46371096,
+          "absolute_error": 3.4143354433203115,
+          "baseline_absolute_error": 2.522745499999985,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-05-21T00:00:00+00:00",
+      "context_start": "2014-03-27T00:00:00+00:00",
+      "period": "reference",
+      "mae": 5.659936383039061,
+      "evidence": [
+        {
+          "timestamp": "2014-05-22T00:00:00+00:00",
+          "lead": 1,
+          "actual": 222.489926686,
+          "point": 222.36236572265625,
+          "q10": 204.69113159179688,
+          "q90": 240.62942504882812,
+          "baseline_point": 216.959205084,
+          "absolute_error": 0.12756096334373979,
+          "baseline_absolute_error": 5.530721602,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-23T00:00:00+00:00",
+          "lead": 2,
+          "actual": 221.565872944,
+          "point": 209.56607055664062,
+          "q10": 189.07095336914062,
+          "q90": 228.7354736328125,
+          "baseline_point": 212.630536434,
+          "absolute_error": 11.99980238735938,
+          "baseline_absolute_error": 8.935336510000013,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-24T00:00:00+00:00",
+          "lead": 3,
+          "actual": 195.66685867,
+          "point": 193.16912841796875,
+          "q10": 172.58639526367188,
+          "q90": 213.3777618408203,
+          "baseline_point": 188.999065818,
+          "absolute_error": 2.4977302520312605,
+          "baseline_absolute_error": 6.667792852000019,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-25T00:00:00+00:00",
+          "lead": 4,
+          "actual": 190.31111951,
+          "point": 195.9242706298828,
+          "q10": 174.46226501464844,
+          "q90": 216.66555786132812,
+          "baseline_point": 181.507468084,
+          "absolute_error": 5.613151119882815,
+          "baseline_absolute_error": 8.803651425999988,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-26T00:00:00+00:00",
+          "lead": 5,
+          "actual": 226.05098972599998,
+          "point": 213.24407958984375,
+          "q10": 190.83079528808594,
+          "q90": 233.67848205566406,
+          "baseline_point": 217.062319264,
+          "absolute_error": 12.806910136156233,
+          "baseline_absolute_error": 8.988670461999988,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-27T00:00:00+00:00",
+          "lead": 6,
+          "actual": 226.917460584,
+          "point": 224.36680603027344,
+          "q10": 202.04678344726562,
+          "q90": 245.6278076171875,
+          "baseline_point": 224.377063876,
+          "absolute_error": 2.5506545537265595,
+          "baseline_absolute_error": 2.540396708000003,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-28T00:00:00+00:00",
+          "lead": 7,
+          "actual": 230.292681426,
+          "point": 226.26893615722656,
+          "q10": 205.63778686523438,
+          "q90": 247.46957397460938,
+          "baseline_point": 221.94096546,
+          "absolute_error": 4.023745268773439,
+          "baseline_absolute_error": 8.351715966,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-05-28T00:00:00+00:00",
+      "context_start": "2014-04-03T00:00:00+00:00",
+      "period": "reference",
+      "mae": 9.197639678571429,
+      "evidence": [
+        {
+          "timestamp": "2014-05-29T00:00:00+00:00",
+          "lead": 1,
+          "actual": 234.660413654,
+          "point": 227.3475799560547,
+          "q10": 212.28530883789062,
+          "q90": 241.25059509277344,
+          "baseline_point": 222.489926686,
+          "absolute_error": 7.312833697945308,
+          "baseline_absolute_error": 12.170486968000006,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-05-30T00:00:00+00:00",
+          "lead": 2,
+          "actual": 231.84855445,
+          "point": 214.2335968017578,
+          "q10": 196.17820739746094,
+          "q90": 228.8515167236328,
+          "baseline_point": 221.565872944,
+          "absolute_error": 17.614957648242182,
+          "baseline_absolute_error": 10.282681505999989,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-05-31T00:00:00+00:00",
+          "lead": 3,
+          "actual": 201.038256576,
+          "point": 196.6125030517578,
+          "q10": 178.39796447753906,
+          "q90": 212.19163513183594,
+          "baseline_point": 195.66685867,
+          "absolute_error": 4.425753524242197,
+          "baseline_absolute_error": 5.371397905999999,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-01T00:00:00+00:00",
+          "lead": 4,
+          "actual": 199.712859758,
+          "point": 198.2750701904297,
+          "q10": 179.0361785888672,
+          "q90": 214.8809356689453,
+          "baseline_point": 190.31111951,
+          "absolute_error": 1.43778956757032,
+          "baseline_absolute_error": 9.40174024800001,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-02T00:00:00+00:00",
+          "lead": 5,
+          "actual": 232.58764709,
+          "point": 214.3243408203125,
+          "q10": 193.86431884765625,
+          "q90": 231.03634643554688,
+          "baseline_point": 226.05098972599998,
+          "absolute_error": 18.26330626968749,
+          "baseline_absolute_error": 6.536657364000007,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-06-03T00:00:00+00:00",
+          "lead": 6,
+          "actual": 235.011377108,
+          "point": 224.95726013183594,
+          "q10": 204.31781005859375,
+          "q90": 243.15098571777344,
+          "baseline_point": 226.917460584,
+          "absolute_error": 10.054116976164067,
+          "baseline_absolute_error": 8.093916524000008,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-04T00:00:00+00:00",
+          "lead": 7,
+          "actual": 230.997025364,
+          "point": 225.72230529785156,
+          "q10": 206.54115295410156,
+          "q90": 243.79324340820312,
+          "baseline_point": 230.292681426,
+          "absolute_error": 5.274720066148433,
+          "baseline_absolute_error": 0.7043439379999938,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-06-04T00:00:00+00:00",
+      "context_start": "2014-04-10T00:00:00+00:00",
+      "period": "reference",
+      "mae": 9.271517733062499,
+      "evidence": [
+        {
+          "timestamp": "2014-06-05T00:00:00+00:00",
+          "lead": 1,
+          "actual": 232.087479466,
+          "point": 226.004638671875,
+          "q10": 210.42630004882812,
+          "q90": 240.86524963378906,
+          "baseline_point": 234.660413654,
+          "absolute_error": 6.082840794124991,
+          "baseline_absolute_error": 2.572934188000005,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-06T00:00:00+00:00",
+          "lead": 2,
+          "actual": 234.6715011,
+          "point": 213.4899444580078,
+          "q10": 194.83425903320312,
+          "q90": 229.18907165527344,
+          "baseline_point": 231.84855445,
+          "absolute_error": 21.181556641992188,
+          "baseline_absolute_error": 2.8229466500000058,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-06-07T00:00:00+00:00",
+          "lead": 3,
+          "actual": 202.432333296,
+          "point": 196.9657745361328,
+          "q10": 178.1031036376953,
+          "q90": 213.85350036621094,
+          "baseline_point": 201.038256576,
+          "absolute_error": 5.466558759867183,
+          "baseline_absolute_error": 1.3940767199999868,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-08T00:00:00+00:00",
+          "lead": 4,
+          "actual": 196.719661858,
+          "point": 198.14761352539062,
+          "q10": 178.68507385253906,
+          "q90": 215.5770263671875,
+          "baseline_point": 199.712859758,
+          "absolute_error": 1.42795166739063,
+          "baseline_absolute_error": 2.9931979000000126,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-09T00:00:00+00:00",
+          "lead": 5,
+          "actual": 206.504624442,
+          "point": 214.6061553955078,
+          "q10": 194.2569122314453,
+          "q90": 232.0879364013672,
+          "baseline_point": 232.58764709,
+          "absolute_error": 8.101530953507819,
+          "baseline_absolute_error": 26.083022647999996,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-10T00:00:00+00:00",
+          "lead": 6,
+          "actual": 235.778186192,
+          "point": 226.35330200195312,
+          "q10": 205.86907958984375,
+          "q90": 245.0456085205078,
+          "baseline_point": 235.011377108,
+          "absolute_error": 9.424884190046868,
+          "baseline_absolute_error": 0.7668090839999877,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-11T00:00:00+00:00",
+          "lead": 7,
+          "actual": 241.099380104,
+          "point": 227.8840789794922,
+          "q10": 208.85536193847656,
+          "q90": 246.45535278320312,
+          "baseline_point": 230.997025364,
+          "absolute_error": 13.215301124507818,
+          "baseline_absolute_error": 10.10235474000001,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-06-11T00:00:00+00:00",
+      "context_start": "2014-04-17T00:00:00+00:00",
+      "period": "reference",
+      "mae": 13.091377143071432,
+      "evidence": [
+        {
+          "timestamp": "2014-06-12T00:00:00+00:00",
+          "lead": 1,
+          "actual": 243.616722524,
+          "point": 229.42884826660156,
+          "q10": 215.21083068847656,
+          "q90": 243.8400115966797,
+          "baseline_point": 232.087479466,
+          "absolute_error": 14.187874257398448,
+          "baseline_absolute_error": 11.52924305800002,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-13T00:00:00+00:00",
+          "lead": 2,
+          "actual": 237.212577078,
+          "point": 215.260009765625,
+          "q10": 199.04306030273438,
+          "q90": 230.0389404296875,
+          "baseline_point": 234.6715011,
+          "absolute_error": 21.95256731237501,
+          "baseline_absolute_error": 2.541075978000009,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-06-14T00:00:00+00:00",
+          "lead": 3,
+          "actual": 212.136561988,
+          "point": 203.00379943847656,
+          "q10": 186.56011962890625,
+          "q90": 218.27369689941406,
+          "baseline_point": 202.432333296,
+          "absolute_error": 9.132762549523449,
+          "baseline_absolute_error": 9.704228692000015,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-15T00:00:00+00:00",
+          "lead": 4,
+          "actual": 203.35819459,
+          "point": 203.557861328125,
+          "q10": 186.3681640625,
+          "q90": 219.63319396972656,
+          "baseline_point": 196.719661858,
+          "absolute_error": 0.19966673812498925,
+          "baseline_absolute_error": 6.638532732000016,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-16T00:00:00+00:00",
+          "lead": 5,
+          "actual": 241.320649452,
+          "point": 215.33935546875,
+          "q10": 198.15440368652344,
+          "q90": 231.0381622314453,
+          "baseline_point": 206.504624442,
+          "absolute_error": 25.981293983249998,
+          "baseline_absolute_error": 34.816025010000004,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-06-17T00:00:00+00:00",
+          "lead": 6,
+          "actual": 244.756767862,
+          "point": 230.6974639892578,
+          "q10": 212.98532104492188,
+          "q90": 247.10511779785156,
+          "baseline_point": 235.778186192,
+          "absolute_error": 14.059303872742191,
+          "baseline_absolute_error": 8.978581670000011,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-18T00:00:00+00:00",
+          "lead": 7,
+          "actual": 244.58834475,
+          "point": 238.46217346191406,
+          "q10": 221.6824951171875,
+          "q90": 254.90594482421875,
+          "baseline_point": 241.099380104,
+          "absolute_error": 6.126171288085942,
+          "baseline_absolute_error": 3.4889646459999994,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-06-18T00:00:00+00:00",
+      "context_start": "2014-04-24T00:00:00+00:00",
+      "period": "reference",
+      "mae": 12.69375723899889,
+      "evidence": [
+        {
+          "timestamp": "2014-06-19T00:00:00+00:00",
+          "lead": 1,
+          "actual": 252.897449834,
+          "point": 238.7232666015625,
+          "q10": 223.47865295410156,
+          "q90": 253.43856811523438,
+          "baseline_point": 243.616722524,
+          "absolute_error": 14.174183232437514,
+          "baseline_absolute_error": 9.280727310000003,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-20T00:00:00+00:00",
+          "lead": 2,
+          "actual": 239.69476055,
+          "point": 225.83575439453125,
+          "q10": 207.8053741455078,
+          "q90": 241.36241149902344,
+          "baseline_point": 237.212577078,
+          "absolute_error": 13.859006155468762,
+          "baseline_absolute_error": 2.4821834720000027,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-21T00:00:00+00:00",
+          "lead": 3,
+          "actual": 211.049436444,
+          "point": 210.86354064941406,
+          "q10": 192.29763793945312,
+          "q90": 227.53269958496094,
+          "baseline_point": 212.136561988,
+          "absolute_error": 0.18589579458594585,
+          "baseline_absolute_error": 1.0871255440000027,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-22T00:00:00+00:00",
+          "lead": 4,
+          "actual": 205.688831308,
+          "point": 211.68101501464844,
+          "q10": 192.1741943359375,
+          "q90": 229.16883850097656,
+          "baseline_point": 203.35819459,
+          "absolute_error": 5.992183706648433,
+          "baseline_absolute_error": 2.330636717999994,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-23T00:00:00+00:00",
+          "lead": 5,
+          "actual": 245.357649132,
+          "point": 224.99891662597656,
+          "q10": 204.65650939941406,
+          "q90": 242.25955200195312,
+          "baseline_point": 241.320649452,
+          "absolute_error": 20.358732506023443,
+          "baseline_absolute_error": 4.036999680000008,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-06-24T00:00:00+00:00",
+          "lead": 6,
+          "actual": 261.774488502,
+          "point": 236.00271606445312,
+          "q10": 215.80149841308594,
+          "q90": 254.0865020751953,
+          "baseline_point": 244.756767862,
+          "absolute_error": 25.771772437546872,
+          "baseline_absolute_error": 17.017720639999993,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-06-25T00:00:00+00:00",
+          "lead": 7,
+          "actual": 248.247620102,
+          "point": 239.73309326171875,
+          "q10": 220.739990234375,
+          "q90": 257.8442077636719,
+          "baseline_point": 244.58834475,
+          "absolute_error": 8.514526840281263,
+          "baseline_absolute_error": 3.6592753520000088,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-06-25T00:00:00+00:00",
+      "context_start": "2014-05-01T00:00:00+00:00",
+      "period": "reference",
+      "mae": 7.444272024178572,
+      "evidence": [
+        {
+          "timestamp": "2014-06-26T00:00:00+00:00",
+          "lead": 1,
+          "actual": 243.389594624,
+          "point": 245.4029541015625,
+          "q10": 230.9764862060547,
+          "q90": 258.49029541015625,
+          "baseline_point": 252.897449834,
+          "absolute_error": 2.0133594775624886,
+          "baseline_absolute_error": 9.507855210000002,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-27T00:00:00+00:00",
+          "lead": 2,
+          "actual": 241.59153925,
+          "point": 233.00411987304688,
+          "q10": 215.50527954101562,
+          "q90": 246.53465270996094,
+          "baseline_point": 239.69476055,
+          "absolute_error": 8.587419376953136,
+          "baseline_absolute_error": 1.8967786999999987,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-28T00:00:00+00:00",
+          "lead": 3,
+          "actual": 218.874063062,
+          "point": 215.05455017089844,
+          "q10": 197.20982360839844,
+          "q90": 230.09671020507812,
+          "baseline_point": 211.049436444,
+          "absolute_error": 3.819512891101567,
+          "baseline_absolute_error": 7.824626617999996,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-29T00:00:00+00:00",
+          "lead": 4,
+          "actual": 220.295310302,
+          "point": 216.48959350585938,
+          "q10": 197.77928161621094,
+          "q90": 232.31040954589844,
+          "baseline_point": 205.688831308,
+          "absolute_error": 3.805716796140615,
+          "baseline_absolute_error": 14.606478993999986,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-06-30T00:00:00+00:00",
+          "lead": 5,
+          "actual": 255.00559694,
+          "point": 233.5990447998047,
+          "q10": 213.31240844726562,
+          "q90": 249.62892150878906,
+          "baseline_point": 245.357649132,
+          "absolute_error": 21.406552140195316,
+          "baseline_absolute_error": 9.647947807999998,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-07-01T00:00:00+00:00",
+          "lead": 6,
+          "actual": 254.810112552,
+          "point": 243.7459716796875,
+          "q10": 223.46966552734375,
+          "q90": 261.453857421875,
+          "baseline_point": 261.774488502,
+          "absolute_error": 11.064140872312493,
+          "baseline_absolute_error": 6.964375950000004,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-02T00:00:00+00:00",
+          "lead": 7,
+          "actual": 245.086450906,
+          "point": 243.67324829101562,
+          "q10": 224.69442749023438,
+          "q90": 261.5714416503906,
+          "baseline_point": 248.247620102,
+          "absolute_error": 1.4132026149843853,
+          "baseline_absolute_error": 3.161169196000003,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-07-02T00:00:00+00:00",
+      "context_start": "2014-05-08T00:00:00+00:00",
+      "period": "reference",
+      "mae": 6.664619776054691,
+      "evidence": [
+        {
+          "timestamp": "2014-07-03T00:00:00+00:00",
+          "lead": 1,
+          "actual": 247.866872026,
+          "point": 243.50225830078125,
+          "q10": 228.2420654296875,
+          "q90": 257.3453063964844,
+          "baseline_point": 243.389594624,
+          "absolute_error": 4.36461372521876,
+          "baseline_absolute_error": 4.477277401999999,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-04T00:00:00+00:00",
+          "lead": 2,
+          "actual": 249.05204299599998,
+          "point": 233.2011260986328,
+          "q10": 214.6188507080078,
+          "q90": 247.82247924804688,
+          "baseline_point": 241.59153925,
+          "absolute_error": 15.85091689736717,
+          "baseline_absolute_error": 7.460503745999972,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-07-05T00:00:00+00:00",
+          "lead": 3,
+          "actual": 218.406723026,
+          "point": 217.88134765625,
+          "q10": 198.65945434570312,
+          "q90": 234.03363037109375,
+          "baseline_point": 218.874063062,
+          "absolute_error": 0.5253753697500088,
+          "baseline_absolute_error": 0.46734003599999596,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-06T00:00:00+00:00",
+          "lead": 4,
+          "actual": 212.914845934,
+          "point": 221.2342987060547,
+          "q10": 201.08200073242188,
+          "q90": 238.08987426757812,
+          "baseline_point": 220.295310302,
+          "absolute_error": 8.319452772054689,
+          "baseline_absolute_error": 7.380464367999991,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-07T00:00:00+00:00",
+          "lead": 5,
+          "actual": 241.260002962,
+          "point": 238.56817626953125,
+          "q10": 217.02713012695312,
+          "q90": 255.38441467285156,
+          "baseline_point": 255.00559694,
+          "absolute_error": 2.6918266924687373,
+          "baseline_absolute_error": 13.745593978000016,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-08T00:00:00+00:00",
+          "lead": 6,
+          "actual": 242.972463762,
+          "point": 248.32167053222656,
+          "q10": 226.87945556640625,
+          "q90": 266.5443115234375,
+          "baseline_point": 254.810112552,
+          "absolute_error": 5.349206770226573,
+          "baseline_absolute_error": 11.837648790000003,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-09T00:00:00+00:00",
+          "lead": 7,
+          "actual": 257.599072426,
+          "point": 248.04812622070312,
+          "q10": 227.76516723632812,
+          "q90": 266.3899841308594,
+          "baseline_point": 245.086450906,
+          "absolute_error": 9.550946205296896,
+          "baseline_absolute_error": 12.51262152000001,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-07-09T00:00:00+00:00",
+      "context_start": "2014-05-15T00:00:00+00:00",
+      "period": "reference",
+      "mae": 8.570849797917415,
+      "evidence": [
+        {
+          "timestamp": "2014-07-10T00:00:00+00:00",
+          "lead": 1,
+          "actual": 257.98055023,
+          "point": 251.24530029296875,
+          "q10": 237.33335876464844,
+          "q90": 265.2032165527344,
+          "baseline_point": 247.866872026,
+          "absolute_error": 6.735249937031256,
+          "baseline_absolute_error": 10.113678203999996,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-11T00:00:00+00:00",
+          "lead": 2,
+          "actual": 247.654738106,
+          "point": 237.7029266357422,
+          "q10": 221.5909881591797,
+          "q90": 251.64137268066406,
+          "baseline_point": 249.05204299599998,
+          "absolute_error": 9.951811470257809,
+          "baseline_absolute_error": 1.3973048899999867,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-12T00:00:00+00:00",
+          "lead": 3,
+          "actual": 227.028991406,
+          "point": 222.92359924316406,
+          "q10": 206.5298309326172,
+          "q90": 237.554931640625,
+          "baseline_point": 218.406723026,
+          "absolute_error": 4.105392162835926,
+          "baseline_absolute_error": 8.62226837999998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-13T00:00:00+00:00",
+          "lead": 4,
+          "actual": 220.939721336,
+          "point": 224.3992462158203,
+          "q10": 207.08949279785156,
+          "q90": 239.78286743164062,
+          "baseline_point": 212.914845934,
+          "absolute_error": 3.4595248798203215,
+          "baseline_absolute_error": 8.024875401999992,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-14T00:00:00+00:00",
+          "lead": 5,
+          "actual": 258.828692886,
+          "point": 238.470947265625,
+          "q10": 220.46450805664062,
+          "q90": 253.7317352294922,
+          "baseline_point": 241.260002962,
+          "absolute_error": 20.357745620375,
+          "baseline_absolute_error": 17.56868992400001,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-07-15T00:00:00+00:00",
+          "lead": 6,
+          "actual": 264.18271463,
+          "point": 250.69126892089844,
+          "q10": 232.53933715820312,
+          "q90": 266.78558349609375,
+          "baseline_point": 242.972463762,
+          "absolute_error": 13.491445709101583,
+          "baseline_absolute_error": 21.21025086800003,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-16T00:00:00+00:00",
+          "lead": 7,
+          "actual": 253.523189944,
+          "point": 255.41796875,
+          "q10": 238.28662109375,
+          "q90": 271.6805419921875,
+          "baseline_point": 257.599072426,
+          "absolute_error": 1.894778806000005,
+          "baseline_absolute_error": 4.075882482000026,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-07-16T00:00:00+00:00",
+      "context_start": "2014-05-22T00:00:00+00:00",
+      "period": "reference",
+      "mae": 10.948001407449778,
+      "evidence": [
+        {
+          "timestamp": "2014-07-17T00:00:00+00:00",
+          "lead": 1,
+          "actual": 259.805011266,
+          "point": 251.87535095214844,
+          "q10": 238.2960205078125,
+          "q90": 265.487060546875,
+          "baseline_point": 257.98055023,
+          "absolute_error": 7.929660313851571,
+          "baseline_absolute_error": 1.8244610360000024,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-18T00:00:00+00:00",
+          "lead": 2,
+          "actual": 256.235468698,
+          "point": 240.50070190429688,
+          "q10": 224.45736694335938,
+          "q90": 254.2480926513672,
+          "baseline_point": 247.654738106,
+          "absolute_error": 15.734766793703102,
+          "baseline_absolute_error": 8.58073059199998,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-07-19T00:00:00+00:00",
+          "lead": 3,
+          "actual": 223.482490216,
+          "point": 223.98681640625,
+          "q10": 208.107666015625,
+          "q90": 238.50537109375,
+          "baseline_point": 227.028991406,
+          "absolute_error": 0.5043261902499978,
+          "baseline_absolute_error": 3.5465011899999865,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-20T00:00:00+00:00",
+          "lead": 4,
+          "actual": 215.77484077,
+          "point": 227.3869171142578,
+          "q10": 210.79832458496094,
+          "q90": 242.2868194580078,
+          "baseline_point": 220.939721336,
+          "absolute_error": 11.612076344257815,
+          "baseline_absolute_error": 5.164880565999994,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-21T00:00:00+00:00",
+          "lead": 5,
+          "actual": 258.827803342,
+          "point": 244.9998779296875,
+          "q10": 227.4149627685547,
+          "q90": 259.5301818847656,
+          "baseline_point": 258.828692886,
+          "absolute_error": 13.827925412312482,
+          "baseline_absolute_error": 0.0008895440000173949,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-22T00:00:00+00:00",
+          "lead": 6,
+          "actual": 268.984564334,
+          "point": 254.8990020751953,
+          "q10": 237.29832458496094,
+          "q90": 270.74224853515625,
+          "baseline_point": 264.18271463,
+          "absolute_error": 14.085562258804714,
+          "baseline_absolute_error": 4.801849704000006,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-23T00:00:00+00:00",
+          "lead": 7,
+          "actual": 267.235454746,
+          "point": 254.29376220703125,
+          "q10": 238.42510986328125,
+          "q90": 269.8707275390625,
+          "baseline_point": 253.523189944,
+          "absolute_error": 12.941692538968766,
+          "baseline_absolute_error": 13.712264802000021,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-07-23T00:00:00+00:00",
+      "context_start": "2014-05-29T00:00:00+00:00",
+      "period": "reference",
+      "mae": 14.14880119722544,
+      "evidence": [
+        {
+          "timestamp": "2014-07-24T00:00:00+00:00",
+          "lead": 1,
+          "actual": 269.354395358,
+          "point": 258.6361389160156,
+          "q10": 245.12220764160156,
+          "q90": 271.4163818359375,
+          "baseline_point": 259.805011266,
+          "absolute_error": 10.718256441984352,
+          "baseline_absolute_error": 9.549384091999968,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-25T00:00:00+00:00",
+          "lead": 2,
+          "actual": 253.27478474,
+          "point": 246.36378479003906,
+          "q10": 230.14874267578125,
+          "q90": 259.40081787109375,
+          "baseline_point": 256.235468698,
+          "absolute_error": 6.910999949960939,
+          "baseline_absolute_error": 2.9606839579999757,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-26T00:00:00+00:00",
+          "lead": 3,
+          "actual": 223.156768042,
+          "point": 231.39686584472656,
+          "q10": 214.81753540039062,
+          "q90": 245.47238159179688,
+          "baseline_point": 223.482490216,
+          "absolute_error": 8.240097802726552,
+          "baseline_absolute_error": 0.32572217399999204,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-27T00:00:00+00:00",
+          "lead": 4,
+          "actual": 211.21604189800001,
+          "point": 233.43966674804688,
+          "q10": 216.1826629638672,
+          "q90": 248.1757049560547,
+          "baseline_point": 215.77484077,
+          "absolute_error": 22.22362485004686,
+          "baseline_absolute_error": 4.558798871999983,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-07-28T00:00:00+00:00",
+          "lead": 5,
+          "actual": 242.072527,
+          "point": 249.23672485351562,
+          "q10": 230.92002868652344,
+          "q90": 263.9925231933594,
+          "baseline_point": 258.827803342,
+          "absolute_error": 7.164197853515617,
+          "baseline_absolute_error": 16.755276341999974,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-29T00:00:00+00:00",
+          "lead": 6,
+          "actual": 246.404601926,
+          "point": 262.8240661621094,
+          "q10": 244.25347900390625,
+          "q90": 278.8641357421875,
+          "baseline_point": 268.984564334,
+          "absolute_error": 16.419464236109377,
+          "baseline_absolute_error": 22.57996240800003,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-07-30T00:00:00+00:00",
+          "lead": 7,
+          "actual": 237.884147744,
+          "point": 265.2491149902344,
+          "q10": 247.9039306640625,
+          "q90": 281.3232421875,
+          "baseline_point": 267.235454746,
+          "absolute_error": 27.364967246234386,
+          "baseline_absolute_error": 29.351307002000027,
+          "covered": false
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-07-30T00:00:00+00:00",
+      "context_start": "2014-06-05T00:00:00+00:00",
+      "period": "reference",
+      "mae": 8.49109056938393,
+      "evidence": [
+        {
+          "timestamp": "2014-07-31T00:00:00+00:00",
+          "lead": 1,
+          "actual": 239.61865251,
+          "point": 251.5620574951172,
+          "q10": 235.09103393554688,
+          "q90": 268.8970642089844,
+          "baseline_point": 269.354395358,
+          "absolute_error": 11.943404985117184,
+          "baseline_absolute_error": 29.735742847999973,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-01T00:00:00+00:00",
+          "lead": 2,
+          "actual": 263.314798322,
+          "point": 242.5443115234375,
+          "q10": 223.3841094970703,
+          "q90": 259.9454040527344,
+          "baseline_point": 253.27478474,
+          "absolute_error": 20.7704867985625,
+          "baseline_absolute_error": 10.040013582,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-08-02T00:00:00+00:00",
+          "lead": 3,
+          "actual": 227.57694229,
+          "point": 220.61228942871094,
+          "q10": 202.01708984375,
+          "q90": 239.20611572265625,
+          "baseline_point": 223.156768042,
+          "absolute_error": 6.964652861289068,
+          "baseline_absolute_error": 4.420174247999995,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-03T00:00:00+00:00",
+          "lead": 4,
+          "actual": 221.635011384,
+          "point": 221.47499084472656,
+          "q10": 202.6011505126953,
+          "q90": 239.70315551757812,
+          "baseline_point": 211.21604189800001,
+          "absolute_error": 0.1600205392734324,
+          "baseline_absolute_error": 10.41896948599998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-04T00:00:00+00:00",
+          "lead": 5,
+          "actual": 256.61974377,
+          "point": 240.77182006835938,
+          "q10": 220.9234161376953,
+          "q90": 257.8316955566406,
+          "baseline_point": 242.072527,
+          "absolute_error": 15.847923701640639,
+          "baseline_absolute_error": 14.547216770000006,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-05T00:00:00+00:00",
+          "lead": 6,
+          "actual": 250.481639172,
+          "point": 250.64942932128906,
+          "q10": 231.24534606933594,
+          "q90": 269.0860290527344,
+          "baseline_point": 246.404601926,
+          "absolute_error": 0.16779014928906122,
+          "baseline_absolute_error": 4.077037246000003,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-06T00:00:00+00:00",
+          "lead": 7,
+          "actual": 246.815479278,
+          "point": 250.39883422851562,
+          "q10": 233.58612060546875,
+          "q90": 268.6515808105469,
+          "baseline_point": 237.884147744,
+          "absolute_error": 3.583354950515627,
+          "baseline_absolute_error": 8.931331534000009,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-08-06T00:00:00+00:00",
+      "context_start": "2014-06-12T00:00:00+00:00",
+      "period": "reference",
+      "mae": 7.659738453416294,
+      "evidence": [
+        {
+          "timestamp": "2014-08-07T00:00:00+00:00",
+          "lead": 1,
+          "actual": 252.00979398,
+          "point": 254.18736267089844,
+          "q10": 238.3162384033203,
+          "q90": 270.8660888671875,
+          "baseline_point": 239.61865251,
+          "absolute_error": 2.1775686908984255,
+          "baseline_absolute_error": 12.391141470000008,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-08T00:00:00+00:00",
+          "lead": 2,
+          "actual": 243.56900637,
+          "point": 243.21205139160156,
+          "q10": 225.38101196289062,
+          "q90": 259.2854919433594,
+          "baseline_point": 263.314798322,
+          "absolute_error": 0.3569549783984485,
+          "baseline_absolute_error": 19.74579195199999,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-09T00:00:00+00:00",
+          "lead": 3,
+          "actual": 217.18736036,
+          "point": 223.9439239501953,
+          "q10": 206.67147827148438,
+          "q90": 240.39187622070312,
+          "baseline_point": 227.57694229,
+          "absolute_error": 6.756563590195299,
+          "baseline_absolute_error": 10.389581929999991,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-10T00:00:00+00:00",
+          "lead": 4,
+          "actual": 212.913591254,
+          "point": 224.8825225830078,
+          "q10": 207.1959991455078,
+          "q90": 241.10324096679688,
+          "baseline_point": 221.635011384,
+          "absolute_error": 11.968931329007802,
+          "baseline_absolute_error": 8.721420129999984,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-11T00:00:00+00:00",
+          "lead": 5,
+          "actual": 261.058640828,
+          "point": 241.66778564453125,
+          "q10": 223.12374877929688,
+          "q90": 257.049072265625,
+          "baseline_point": 256.61974377,
+          "absolute_error": 19.390855183468773,
+          "baseline_absolute_error": 4.438897058000009,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-08-12T00:00:00+00:00",
+          "lead": 6,
+          "actual": 262.47509844,
+          "point": 251.06283569335938,
+          "q10": 232.8854217529297,
+          "q90": 267.388671875,
+          "baseline_point": 250.481639172,
+          "absolute_error": 11.412262746640636,
+          "baseline_absolute_error": 11.99345926800001,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-13T00:00:00+00:00",
+          "lead": 7,
+          "actual": 253.51555816799998,
+          "point": 251.9605255126953,
+          "q10": 235.7858123779297,
+          "q90": 267.9022216796875,
+          "baseline_point": 246.815479278,
+          "absolute_error": 1.5550326553046716,
+          "baseline_absolute_error": 6.700078889999986,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-08-13T00:00:00+00:00",
+      "context_start": "2014-06-19T00:00:00+00:00",
+      "period": "recent",
+      "mae": 6.294337654815844,
+      "evidence": [
+        {
+          "timestamp": "2014-08-14T00:00:00+00:00",
+          "lead": 1,
+          "actual": 249.853049548,
+          "point": 250.4492950439453,
+          "q10": 233.9835968017578,
+          "q90": 266.2764892578125,
+          "baseline_point": 252.00979398,
+          "absolute_error": 0.5962454959453112,
+          "baseline_absolute_error": 2.1567444320000106,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-15T00:00:00+00:00",
+          "lead": 2,
+          "actual": 244.954895408,
+          "point": 239.84739685058594,
+          "q10": 220.86624145507812,
+          "q90": 255.49636840820312,
+          "baseline_point": 243.56900637,
+          "absolute_error": 5.107498557414061,
+          "baseline_absolute_error": 1.3858890379999877,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-16T00:00:00+00:00",
+          "lead": 3,
+          "actual": 221.146268684,
+          "point": 224.52059936523438,
+          "q10": 205.644287109375,
+          "q90": 240.5078125,
+          "baseline_point": 217.18736036,
+          "absolute_error": 3.374330681234369,
+          "baseline_absolute_error": 3.9589083239999923,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-17T00:00:00+00:00",
+          "lead": 4,
+          "actual": 210.597724776,
+          "point": 226.62367248535156,
+          "q10": 207.404296875,
+          "q90": 242.62710571289062,
+          "baseline_point": 212.913591254,
+          "absolute_error": 16.025947709351556,
+          "baseline_absolute_error": 2.315866478000004,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-18T00:00:00+00:00",
+          "lead": 5,
+          "actual": 250.250471944,
+          "point": 242.78515625,
+          "q10": 222.71055603027344,
+          "q90": 258.2336730957031,
+          "baseline_point": 261.058640828,
+          "absolute_error": 7.465315693999997,
+          "baseline_absolute_error": 10.808168884000025,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-19T00:00:00+00:00",
+          "lead": 6,
+          "actual": 248.265012146,
+          "point": 253.5538330078125,
+          "q10": 233.5377655029297,
+          "q90": 270.0417175292969,
+          "baseline_point": 262.47509844,
+          "absolute_error": 5.288820861812496,
+          "baseline_absolute_error": 14.210086294000007,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-20T00:00:00+00:00",
+          "lead": 7,
+          "actual": 247.303441168,
+          "point": 253.50564575195312,
+          "q10": 235.2004852294922,
+          "q90": 269.3843994140625,
+          "baseline_point": 253.51555816799998,
+          "absolute_error": 6.202204583953119,
+          "baseline_absolute_error": 6.212116999999978,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-08-20T00:00:00+00:00",
+      "context_start": "2014-06-26T00:00:00+00:00",
+      "period": "recent",
+      "mae": 13.618165499848212,
+      "evidence": [
+        {
+          "timestamp": "2014-08-21T00:00:00+00:00",
+          "lead": 1,
+          "actual": 242.79371562400001,
+          "point": 249.5289764404297,
+          "q10": 232.69342041015625,
+          "q90": 266.5198059082031,
+          "baseline_point": 249.853049548,
+          "absolute_error": 6.735260816429673,
+          "baseline_absolute_error": 7.059333923999986,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-22T00:00:00+00:00",
+          "lead": 2,
+          "actual": 231.165211644,
+          "point": 239.95706176757812,
+          "q10": 220.6365966796875,
+          "q90": 256.70355224609375,
+          "baseline_point": 244.954895408,
+          "absolute_error": 8.791850123578115,
+          "baseline_absolute_error": 13.789683763999989,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-23T00:00:00+00:00",
+          "lead": 3,
+          "actual": 202.580009638,
+          "point": 223.6177520751953,
+          "q10": 204.47369384765625,
+          "q90": 240.91983032226562,
+          "baseline_point": 221.146268684,
+          "absolute_error": 21.037742437195305,
+          "baseline_absolute_error": 18.566259046,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-08-24T00:00:00+00:00",
+          "lead": 4,
+          "actual": 200.860669396,
+          "point": 225.1664276123047,
+          "q10": 205.7022705078125,
+          "q90": 242.15322875976562,
+          "baseline_point": 210.597724776,
+          "absolute_error": 24.305758216304696,
+          "baseline_absolute_error": 9.737055380000015,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-08-25T00:00:00+00:00",
+          "lead": 5,
+          "actual": 239.126760428,
+          "point": 241.37136840820312,
+          "q10": 221.07443237304688,
+          "q90": 257.52410888671875,
+          "baseline_point": 250.250471944,
+          "absolute_error": 2.2446079802031136,
+          "baseline_absolute_error": 11.123711515999986,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-26T00:00:00+00:00",
+          "lead": 6,
+          "actual": 236.93225352,
+          "point": 251.1125946044922,
+          "q10": 231.1265106201172,
+          "q90": 268.1651916503906,
+          "baseline_point": 248.265012146,
+          "absolute_error": 14.180341084492198,
+          "baseline_absolute_error": 11.332758626000015,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-27T00:00:00+00:00",
+          "lead": 7,
+          "actual": 233.073962462,
+          "point": 251.10556030273438,
+          "q10": 232.99249267578125,
+          "q90": 267.666259765625,
+          "baseline_point": 247.303441168,
+          "absolute_error": 18.031597840734378,
+          "baseline_absolute_error": 14.229478706000009,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-08-27T00:00:00+00:00",
+      "context_start": "2014-07-03T00:00:00+00:00",
+      "period": "recent",
+      "mae": 9.824298641636164,
+      "evidence": [
+        {
+          "timestamp": "2014-08-28T00:00:00+00:00",
+          "lead": 1,
+          "actual": 233.122114494,
+          "point": 242.0331268310547,
+          "q10": 222.1292266845703,
+          "q90": 261.4302673339844,
+          "baseline_point": 242.79371562400001,
+          "absolute_error": 8.9110123370547,
+          "baseline_absolute_error": 9.671601130000028,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-29T00:00:00+00:00",
+          "lead": 2,
+          "actual": 233.82076382,
+          "point": 233.76930236816406,
+          "q10": 210.5023193359375,
+          "q90": 253.67803955078125,
+          "baseline_point": 231.165211644,
+          "absolute_error": 0.05146145183593376,
+          "baseline_absolute_error": 2.6555521759999863,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-08-30T00:00:00+00:00",
+          "lead": 3,
+          "actual": 193.010548572,
+          "point": 216.80885314941406,
+          "q10": 193.03680419921875,
+          "q90": 237.59439086914062,
+          "baseline_point": 202.580009638,
+          "absolute_error": 23.798304577414058,
+          "baseline_absolute_error": 9.569461066000002,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-08-31T00:00:00+00:00",
+          "lead": 4,
+          "actual": 189.32914646,
+          "point": 216.7315216064453,
+          "q10": 192.2154998779297,
+          "q90": 237.43792724609375,
+          "baseline_point": 200.860669396,
+          "absolute_error": 27.40237514644531,
+          "baseline_absolute_error": 11.531522935999988,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-09-01T00:00:00+00:00",
+          "lead": 5,
+          "actual": 236.269643916,
+          "point": 231.74844360351562,
+          "q10": 205.92605590820312,
+          "q90": 251.61033630371094,
+          "baseline_point": 239.126760428,
+          "absolute_error": 4.521200312484382,
+          "baseline_absolute_error": 2.8571165120000046,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-02T00:00:00+00:00",
+          "lead": 6,
+          "actual": 238.223979566,
+          "point": 241.40914916992188,
+          "q10": 215.610595703125,
+          "q90": 262.2835388183594,
+          "baseline_point": 236.93225352,
+          "absolute_error": 3.185169603921878,
+          "baseline_absolute_error": 1.291726046000008,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-03T00:00:00+00:00",
+          "lead": 7,
+          "actual": 241.451697342,
+          "point": 242.35226440429688,
+          "q10": 218.3799591064453,
+          "q90": 262.76568603515625,
+          "baseline_point": 233.073962462,
+          "absolute_error": 0.9005670622968864,
+          "baseline_absolute_error": 8.377734879999991,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-09-03T00:00:00+00:00",
+      "context_start": "2014-07-10T00:00:00+00:00",
+      "period": "recent",
+      "mae": 11.907570865585935,
+      "evidence": [
+        {
+          "timestamp": "2014-09-04T00:00:00+00:00",
+          "lead": 1,
+          "actual": 241.705381812,
+          "point": 237.69789123535156,
+          "q10": 218.9119873046875,
+          "q90": 256.74237060546875,
+          "baseline_point": 233.122114494,
+          "absolute_error": 4.0074905766484505,
+          "baseline_absolute_error": 8.583267318000026,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-05T00:00:00+00:00",
+          "lead": 2,
+          "actual": 233.516562276,
+          "point": 224.8687286376953,
+          "q10": 202.9623565673828,
+          "q90": 244.26438903808594,
+          "baseline_point": 233.82076382,
+          "absolute_error": 8.64783363830469,
+          "baseline_absolute_error": 0.30420154399999433,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-06T00:00:00+00:00",
+          "lead": 3,
+          "actual": 198.104970102,
+          "point": 207.2344512939453,
+          "q10": 185.060546875,
+          "q90": 227.48095703125,
+          "baseline_point": 193.010548572,
+          "absolute_error": 9.129481191945302,
+          "baseline_absolute_error": 5.094421530000005,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-07T00:00:00+00:00",
+          "lead": 4,
+          "actual": 186.010421868,
+          "point": 208.03195190429688,
+          "q10": 184.92665100097656,
+          "q90": 228.59519958496094,
+          "baseline_point": 189.32914646,
+          "absolute_error": 22.021530036296866,
+          "baseline_absolute_error": 3.3187245919999953,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-08T00:00:00+00:00",
+          "lead": 5,
+          "actual": 218.227625498,
+          "point": 224.6261749267578,
+          "q10": 200.35211181640625,
+          "q90": 244.72357177734375,
+          "baseline_point": 236.269643916,
+          "absolute_error": 6.3985494287578035,
+          "baseline_absolute_error": 18.042018417999998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-09T00:00:00+00:00",
+          "lead": 6,
+          "actual": 222.727432448,
+          "point": 237.5162353515625,
+          "q10": 212.9999542236328,
+          "q90": 258.6798095703125,
+          "baseline_point": 238.223979566,
+          "absolute_error": 14.788802903562498,
+          "baseline_absolute_error": 15.496547117999995,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-10T00:00:00+00:00",
+          "lead": 7,
+          "actual": 222.021291692,
+          "point": 240.38059997558594,
+          "q10": 217.32269287109375,
+          "q90": 261.33489990234375,
+          "baseline_point": 241.451697342,
+          "absolute_error": 18.359308283585932,
+          "baseline_absolute_error": 19.430405649999983,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-09-10T00:00:00+00:00",
+      "context_start": "2014-07-17T00:00:00+00:00",
+      "period": "recent",
+      "mae": 9.208998415376117,
+      "evidence": [
+        {
+          "timestamp": "2014-09-11T00:00:00+00:00",
+          "lead": 1,
+          "actual": 226.73725464999998,
+          "point": 227.958984375,
+          "q10": 207.66656494140625,
+          "q90": 247.81288146972656,
+          "baseline_point": 241.705381812,
+          "absolute_error": 1.2217297250000172,
+          "baseline_absolute_error": 14.96812716200003,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-12T00:00:00+00:00",
+          "lead": 2,
+          "actual": 231.368291744,
+          "point": 217.78414916992188,
+          "q10": 193.22543334960938,
+          "q90": 238.85101318359375,
+          "baseline_point": 233.516562276,
+          "absolute_error": 13.584142574078129,
+          "baseline_absolute_error": 2.148270531999998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-13T00:00:00+00:00",
+          "lead": 3,
+          "actual": 196.583377262,
+          "point": 199.30206298828125,
+          "q10": 173.69131469726562,
+          "q90": 221.9505157470703,
+          "baseline_point": 198.104970102,
+          "absolute_error": 2.718685726281251,
+          "baseline_absolute_error": 1.521592840000011,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-14T00:00:00+00:00",
+          "lead": 4,
+          "actual": 185.043838964,
+          "point": 197.64166259765625,
+          "q10": 170.70132446289062,
+          "q90": 220.6207733154297,
+          "baseline_point": 186.010421868,
+          "absolute_error": 12.597823633656247,
+          "baseline_absolute_error": 0.9665829040000062,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-15T00:00:00+00:00",
+          "lead": 5,
+          "actual": 225.464064872,
+          "point": 212.22235107421875,
+          "q10": 183.5189208984375,
+          "q90": 234.61624145507812,
+          "baseline_point": 218.227625498,
+          "absolute_error": 13.241713797781244,
+          "baseline_absolute_error": 7.2364393739999855,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-16T00:00:00+00:00",
+          "lead": 6,
+          "actual": 235.698203312,
+          "point": 223.78298950195312,
+          "q10": 194.53057861328125,
+          "q90": 247.88436889648438,
+          "baseline_point": 222.727432448,
+          "absolute_error": 11.915213810046879,
+          "baseline_absolute_error": 12.970770864000002,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-17T00:00:00+00:00",
+          "lead": 7,
+          "actual": 236.132883132,
+          "point": 226.94920349121094,
+          "q10": 198.72872924804688,
+          "q90": 251.55645751953125,
+          "baseline_point": 222.021291692,
+          "absolute_error": 9.183679640789052,
+          "baseline_absolute_error": 14.111591439999984,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-09-17T00:00:00+00:00",
+      "context_start": "2014-07-24T00:00:00+00:00",
+      "period": "recent",
+      "mae": 10.56304359119866,
+      "evidence": [
+        {
+          "timestamp": "2014-09-18T00:00:00+00:00",
+          "lead": 1,
+          "actual": 241.150931614,
+          "point": 230.2628173828125,
+          "q10": 212.82748413085938,
+          "q90": 246.6412811279297,
+          "baseline_point": 226.73725464999998,
+          "absolute_error": 10.888114231187501,
+          "baseline_absolute_error": 14.413676964000018,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-19T00:00:00+00:00",
+          "lead": 2,
+          "actual": 230.364015644,
+          "point": 218.03497314453125,
+          "q10": 197.0303955078125,
+          "q90": 235.2117462158203,
+          "baseline_point": 231.368291744,
+          "absolute_error": 12.329042499468756,
+          "baseline_absolute_error": 1.0042760999999985,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-20T00:00:00+00:00",
+          "lead": 3,
+          "actual": 199.898901276,
+          "point": 202.5707244873047,
+          "q10": 180.2937774658203,
+          "q90": 221.15284729003906,
+          "baseline_point": 196.583377262,
+          "absolute_error": 2.671823211304684,
+          "baseline_absolute_error": 3.3155240140000046,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-21T00:00:00+00:00",
+          "lead": 4,
+          "actual": 187.057023898,
+          "point": 201.02737426757812,
+          "q10": 177.25650024414062,
+          "q90": 220.36001586914062,
+          "baseline_point": 185.043838964,
+          "absolute_error": 13.970350369578114,
+          "baseline_absolute_error": 2.0131849340000088,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-22T00:00:00+00:00",
+          "lead": 5,
+          "actual": 217.468430896,
+          "point": 213.64080810546875,
+          "q10": 188.33642578125,
+          "q90": 232.76585388183594,
+          "baseline_point": 225.464064872,
+          "absolute_error": 3.827622790531251,
+          "baseline_absolute_error": 7.9956339759999935,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-23T00:00:00+00:00",
+          "lead": 6,
+          "actual": 215.156355962,
+          "point": 227.29257202148438,
+          "q10": 201.4426727294922,
+          "q90": 247.53684997558594,
+          "baseline_point": 235.698203312,
+          "absolute_error": 12.136216059484383,
+          "baseline_absolute_error": 20.541847350000012,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-24T00:00:00+00:00",
+          "lead": 7,
+          "actual": 215.46607728,
+          "point": 233.58421325683594,
+          "q10": 208.55886840820312,
+          "q90": 253.89234924316406,
+          "baseline_point": 236.132883132,
+          "absolute_error": 18.11813597683593,
+          "baseline_absolute_error": 20.66680585199998,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-09-24T00:00:00+00:00",
+      "context_start": "2014-07-31T00:00:00+00:00",
+      "period": "recent",
+      "mae": 6.509952568801334,
+      "evidence": [
+        {
+          "timestamp": "2014-09-25T00:00:00+00:00",
+          "lead": 1,
+          "actual": 217.797838828,
+          "point": 225.563232421875,
+          "q10": 205.97067260742188,
+          "q90": 243.99090576171875,
+          "baseline_point": 241.150931614,
+          "absolute_error": 7.76539359387499,
+          "baseline_absolute_error": 23.35309278599999,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-26T00:00:00+00:00",
+          "lead": 2,
+          "actual": 214.799597462,
+          "point": 216.29714965820312,
+          "q10": 192.99697875976562,
+          "q90": 235.57115173339844,
+          "baseline_point": 230.364015644,
+          "absolute_error": 1.4975521962031166,
+          "baseline_absolute_error": 15.564418181999997,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-27T00:00:00+00:00",
+          "lead": 3,
+          "actual": 184.72685141,
+          "point": 198.45010375976562,
+          "q10": 174.0528564453125,
+          "q90": 218.96536254882812,
+          "baseline_point": 199.898901276,
+          "absolute_error": 13.72325234976563,
+          "baseline_absolute_error": 15.172049866000009,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-28T00:00:00+00:00",
+          "lead": 4,
+          "actual": 177.315894968,
+          "point": 196.0975799560547,
+          "q10": 170.194091796875,
+          "q90": 217.0253448486328,
+          "baseline_point": 187.057023898,
+          "absolute_error": 18.78168498805468,
+          "baseline_absolute_error": 9.741128930000002,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-29T00:00:00+00:00",
+          "lead": 5,
+          "actual": 207.730453672,
+          "point": 209.09718322753906,
+          "q10": 181.33187866210938,
+          "q90": 229.57656860351562,
+          "baseline_point": 217.468430896,
+          "absolute_error": 1.3667295555390524,
+          "baseline_absolute_error": 9.73797722399999,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-09-30T00:00:00+00:00",
+          "lead": 6,
+          "actual": 218.174634644,
+          "point": 220.32937622070312,
+          "q10": 192.038330078125,
+          "q90": 242.1591796875,
+          "baseline_point": 215.156355962,
+          "absolute_error": 2.154741576703117,
+          "baseline_absolute_error": 3.018278682000016,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-01T00:00:00+00:00",
+          "lead": 7,
+          "actual": 224.694193116,
+          "point": 224.41387939453125,
+          "q10": 197.3725128173828,
+          "q90": 246.15426635742188,
+          "baseline_point": 215.46607728,
+          "absolute_error": 0.2803137214687581,
+          "baseline_absolute_error": 9.228115836,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-10-01T00:00:00+00:00",
+      "context_start": "2014-08-07T00:00:00+00:00",
+      "period": "recent",
+      "mae": 8.244144391559148,
+      "evidence": [
+        {
+          "timestamp": "2014-10-02T00:00:00+00:00",
+          "lead": 1,
+          "actual": 224.90238728399999,
+          "point": 221.81944274902344,
+          "q10": 204.0252685546875,
+          "q90": 238.99801635742188,
+          "baseline_point": 217.797838828,
+          "absolute_error": 3.082944534976548,
+          "baseline_absolute_error": 7.104548455999975,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-03T00:00:00+00:00",
+          "lead": 2,
+          "actual": 212.365593856,
+          "point": 209.40609741210938,
+          "q10": 188.12603759765625,
+          "q90": 227.60897827148438,
+          "baseline_point": 214.799597462,
+          "absolute_error": 2.959496443890629,
+          "baseline_absolute_error": 2.4340036060000045,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-04T00:00:00+00:00",
+          "lead": 3,
+          "actual": 183.74868257400001,
+          "point": 193.8743438720703,
+          "q10": 171.1959991455078,
+          "q90": 213.22166442871094,
+          "baseline_point": 184.72685141,
+          "absolute_error": 10.125661298070298,
+          "baseline_absolute_error": 0.9781688359999805,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-05T00:00:00+00:00",
+          "lead": 4,
+          "actual": 173.583948884,
+          "point": 190.04229736328125,
+          "q10": 165.84857177734375,
+          "q90": 210.160888671875,
+          "baseline_point": 177.315894968,
+          "absolute_error": 16.458348479281256,
+          "baseline_absolute_error": 3.7319460840000147,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-06T00:00:00+00:00",
+          "lead": 5,
+          "actual": 221.161395562,
+          "point": 200.59463500976562,
+          "q10": 174.9337158203125,
+          "q90": 220.7136688232422,
+          "baseline_point": 207.730453672,
+          "absolute_error": 20.56676055223437,
+          "baseline_absolute_error": 13.430941889999986,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-10-07T00:00:00+00:00",
+          "lead": 6,
+          "actual": 216.720937392,
+          "point": 216.01800537109375,
+          "q10": 189.43780517578125,
+          "q90": 237.3167266845703,
+          "baseline_point": 218.174634644,
+          "absolute_error": 0.7029320209062462,
+          "baseline_absolute_error": 1.453697252000012,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-08T00:00:00+00:00",
+          "lead": 7,
+          "actual": 221.225142232,
+          "point": 225.0380096435547,
+          "q10": 198.8879852294922,
+          "q90": 246.55133056640625,
+          "baseline_point": 224.694193116,
+          "absolute_error": 3.8128674115546914,
+          "baseline_absolute_error": 3.469050884000012,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-10-08T00:00:00+00:00",
+      "context_start": "2014-08-14T00:00:00+00:00",
+      "period": "recent",
+      "mae": 8.073293960989957,
+      "evidence": [
+        {
+          "timestamp": "2014-10-09T00:00:00+00:00",
+          "lead": 1,
+          "actual": 217.726724034,
+          "point": 220.04595947265625,
+          "q10": 202.7161102294922,
+          "q90": 236.47422790527344,
+          "baseline_point": 224.90238728399999,
+          "absolute_error": 2.31923543865625,
+          "baseline_absolute_error": 7.175663249999985,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-10T00:00:00+00:00",
+          "lead": 2,
+          "actual": 213.9396859,
+          "point": 208.13314819335938,
+          "q10": 187.4463348388672,
+          "q90": 225.20602416992188,
+          "baseline_point": 212.365593856,
+          "absolute_error": 5.806537706640626,
+          "baseline_absolute_error": 1.5740920439999968,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-11T00:00:00+00:00",
+          "lead": 3,
+          "actual": 186.21909401,
+          "point": 190.97254943847656,
+          "q10": 169.2500762939453,
+          "q90": 209.17034912109375,
+          "baseline_point": 183.74868257400001,
+          "absolute_error": 4.75345542847657,
+          "baseline_absolute_error": 2.470411435999978,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-12T00:00:00+00:00",
+          "lead": 4,
+          "actual": 181.445632594,
+          "point": 187.96151733398438,
+          "q10": 164.95419311523438,
+          "q90": 206.74093627929688,
+          "baseline_point": 173.583948884,
+          "absolute_error": 6.515884739984386,
+          "baseline_absolute_error": 7.861683709999994,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-13T00:00:00+00:00",
+          "lead": 5,
+          "actual": 222.122176916,
+          "point": 200.626220703125,
+          "q10": 176.28561401367188,
+          "q90": 219.0636444091797,
+          "baseline_point": 221.161395562,
+          "absolute_error": 21.495956212875,
+          "baseline_absolute_error": 0.9607813540000052,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-10-14T00:00:00+00:00",
+          "lead": 6,
+          "actual": 228.70363741,
+          "point": 215.66397094726562,
+          "q10": 190.66119384765625,
+          "q90": 235.34188842773438,
+          "baseline_point": 216.720937392,
+          "absolute_error": 13.039666462734374,
+          "baseline_absolute_error": 11.982700018000003,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-15T00:00:00+00:00",
+          "lead": 7,
+          "actual": 225.683273886,
+          "point": 223.1009521484375,
+          "q10": 199.2572021484375,
+          "q90": 242.6772003173828,
+          "baseline_point": 221.225142232,
+          "absolute_error": 2.582321737562495,
+          "baseline_absolute_error": 4.458131653999999,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-10-15T00:00:00+00:00",
+      "context_start": "2014-08-21T00:00:00+00:00",
+      "period": "recent",
+      "mae": 5.27366356225893,
+      "evidence": [
+        {
+          "timestamp": "2014-10-16T00:00:00+00:00",
+          "lead": 1,
+          "actual": 224.579852372,
+          "point": 220.72006225585938,
+          "q10": 204.11697387695312,
+          "q90": 235.87799072265625,
+          "baseline_point": 217.726724034,
+          "absolute_error": 3.85979011614063,
+          "baseline_absolute_error": 6.853128338000005,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-17T00:00:00+00:00",
+          "lead": 2,
+          "actual": 214.55514634600002,
+          "point": 208.40151977539062,
+          "q10": 188.6971893310547,
+          "q90": 223.6045379638672,
+          "baseline_point": 213.9396859,
+          "absolute_error": 6.15362657060939,
+          "baseline_absolute_error": 0.6154604460000144,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-18T00:00:00+00:00",
+          "lead": 3,
+          "actual": 191.73906361,
+          "point": 191.08200073242188,
+          "q10": 170.68470764160156,
+          "q90": 207.37277221679688,
+          "baseline_point": 186.21909401,
+          "absolute_error": 0.6570628775781131,
+          "baseline_absolute_error": 5.519969599999996,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-19T00:00:00+00:00",
+          "lead": 4,
+          "actual": 183.938925838,
+          "point": 190.61329650878906,
+          "q10": 169.24575805664062,
+          "q90": 207.1632537841797,
+          "baseline_point": 181.445632594,
+          "absolute_error": 6.674370670789074,
+          "baseline_absolute_error": 2.493293244,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-20T00:00:00+00:00",
+          "lead": 5,
+          "actual": 213.214673408,
+          "point": 206.18307495117188,
+          "q10": 183.616455078125,
+          "q90": 222.36573791503906,
+          "baseline_point": 222.122176916,
+          "absolute_error": 7.031598456828135,
+          "baseline_absolute_error": 8.90750350799999,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-21T00:00:00+00:00",
+          "lead": 6,
+          "actual": 222.90960824799998,
+          "point": 219.50814819335938,
+          "q10": 196.95535278320312,
+          "q90": 236.73165893554688,
+          "baseline_point": 228.70363741,
+          "absolute_error": 3.4014600546406086,
+          "baseline_absolute_error": 5.794029162000015,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-22T00:00:00+00:00",
+          "lead": 7,
+          "actual": 233.001612532,
+          "point": 223.86387634277344,
+          "q10": 202.69808959960938,
+          "q90": 240.8743133544922,
+          "baseline_point": 225.683273886,
+          "absolute_error": 9.137736189226558,
+          "baseline_absolute_error": 7.318338646000001,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-10-22T00:00:00+00:00",
+      "context_start": "2014-08-28T00:00:00+00:00",
+      "period": "recent",
+      "mae": 6.91713936287165,
+      "evidence": [
+        {
+          "timestamp": "2014-10-23T00:00:00+00:00",
+          "lead": 1,
+          "actual": 224.634842454,
+          "point": 223.27259826660156,
+          "q10": 209.143798828125,
+          "q90": 235.64149475097656,
+          "baseline_point": 224.579852372,
+          "absolute_error": 1.3622441873984314,
+          "baseline_absolute_error": 0.054990081999989116,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-24T00:00:00+00:00",
+          "lead": 2,
+          "actual": 227.945416738,
+          "point": 210.20323181152344,
+          "q10": 193.28684997558594,
+          "q90": 222.96266174316406,
+          "baseline_point": 214.55514634600002,
+          "absolute_error": 17.74218492647657,
+          "baseline_absolute_error": 13.39027039199999,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-10-25T00:00:00+00:00",
+          "lead": 3,
+          "actual": 193.219834956,
+          "point": 194.97654724121094,
+          "q10": 177.27166748046875,
+          "q90": 208.6764678955078,
+          "baseline_point": 191.73906361,
+          "absolute_error": 1.7567122852109378,
+          "baseline_absolute_error": 1.4807713460000116,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-26T00:00:00+00:00",
+          "lead": 4,
+          "actual": 182.96065429,
+          "point": 193.78770446777344,
+          "q10": 175.01943969726562,
+          "q90": 208.3092041015625,
+          "baseline_point": 183.938925838,
+          "absolute_error": 10.82705017777343,
+          "baseline_absolute_error": 0.9782715479999808,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-27T00:00:00+00:00",
+          "lead": 5,
+          "actual": 212.938331098,
+          "point": 205.66867065429688,
+          "q10": 186.03724670410156,
+          "q90": 219.83250427246094,
+          "baseline_point": 213.214673408,
+          "absolute_error": 7.269660443703117,
+          "baseline_absolute_error": 0.2763423100000182,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-28T00:00:00+00:00",
+          "lead": 6,
+          "actual": 220.959579176,
+          "point": 220.8930206298828,
+          "q10": 201.0938262939453,
+          "q90": 236.03053283691406,
+          "baseline_point": 222.90960824799998,
+          "absolute_error": 0.06655854611719292,
+          "baseline_absolute_error": 1.9500290719999782,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-29T00:00:00+00:00",
+          "lead": 7,
+          "actual": 218.727451384,
+          "point": 228.12301635742188,
+          "q10": 209.44285583496094,
+          "q90": 243.0876007080078,
+          "baseline_point": 233.001612532,
+          "absolute_error": 9.39556497342187,
+          "baseline_absolute_error": 14.27416114799999,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-10-29T00:00:00+00:00",
+      "context_start": "2014-09-04T00:00:00+00:00",
+      "period": "recent",
+      "mae": 11.958156059261158,
+      "evidence": [
+        {
+          "timestamp": "2014-10-30T00:00:00+00:00",
+          "lead": 1,
+          "actual": 218.745918194,
+          "point": 221.46678161621094,
+          "q10": 207.3800506591797,
+          "q90": 234.56295776367188,
+          "baseline_point": 224.634842454,
+          "absolute_error": 2.7208634222109254,
+          "baseline_absolute_error": 5.888924259999982,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-10-31T00:00:00+00:00",
+          "lead": 2,
+          "actual": 226.761522642,
+          "point": 211.0421905517578,
+          "q10": 194.43690490722656,
+          "q90": 223.76380920410156,
+          "baseline_point": 227.945416738,
+          "absolute_error": 15.719332090242176,
+          "baseline_absolute_error": 1.1838940960000173,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-11-01T00:00:00+00:00",
+          "lead": 3,
+          "actual": 187.83642766,
+          "point": 193.5554962158203,
+          "q10": 176.6041259765625,
+          "q90": 207.17169189453125,
+          "baseline_point": 193.219834956,
+          "absolute_error": 5.719068555820314,
+          "baseline_absolute_error": 5.3834072960000015,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-02T00:00:00+00:00",
+          "lead": 4,
+          "actual": 186.301853994,
+          "point": 192.67562866210938,
+          "q10": 174.93917846679688,
+          "q90": 206.22793579101562,
+          "baseline_point": 182.96065429,
+          "absolute_error": 6.373774668109377,
+          "baseline_absolute_error": 3.3411997039999903,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-03T00:00:00+00:00",
+          "lead": 5,
+          "actual": 200.563410818,
+          "point": 207.4289093017578,
+          "q10": 188.50636291503906,
+          "q90": 220.43600463867188,
+          "baseline_point": 212.938331098,
+          "absolute_error": 6.865498483757818,
+          "baseline_absolute_error": 12.374920279999998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-04T00:00:00+00:00",
+          "lead": 6,
+          "actual": 186.938436556,
+          "point": 218.30020141601562,
+          "q10": 199.62860107421875,
+          "q90": 232.16751098632812,
+          "baseline_point": 220.959579176,
+          "absolute_error": 31.361764860015626,
+          "baseline_absolute_error": 34.021142620000006,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-11-05T00:00:00+00:00",
+          "lead": 7,
+          "actual": 206.637651804,
+          "point": 221.58444213867188,
+          "q10": 204.65023803710938,
+          "q90": 235.20799255371094,
+          "baseline_point": 218.727451384,
+          "absolute_error": 14.946790334671874,
+          "baseline_absolute_error": 12.089799580000005,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-11-05T00:00:00+00:00",
+      "context_start": "2014-09-11T00:00:00+00:00",
+      "period": "recent",
+      "mae": 10.270736498643974,
+      "evidence": [
+        {
+          "timestamp": "2014-11-06T00:00:00+00:00",
+          "lead": 1,
+          "actual": 211.98566052,
+          "point": 218.2963104248047,
+          "q10": 200.9147491455078,
+          "q90": 235.18919372558594,
+          "baseline_point": 218.745918194,
+          "absolute_error": 6.310649904804677,
+          "baseline_absolute_error": 6.760257674000002,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-07T00:00:00+00:00",
+          "lead": 2,
+          "actual": 227.213164292,
+          "point": 210.51742553710938,
+          "q10": 190.100830078125,
+          "q90": 228.1792449951172,
+          "baseline_point": 226.761522642,
+          "absolute_error": 16.695738754890613,
+          "baseline_absolute_error": 0.4516416499999991,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-08T00:00:00+00:00",
+          "lead": 3,
+          "actual": 205.428282246,
+          "point": 192.2256622314453,
+          "q10": 171.27635192871094,
+          "q90": 210.5349578857422,
+          "baseline_point": 187.83642766,
+          "absolute_error": 13.202620014554697,
+          "baseline_absolute_error": 17.59185458600001,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-09T00:00:00+00:00",
+          "lead": 4,
+          "actual": 176.059747074,
+          "point": 187.73785400390625,
+          "q10": 165.97865295410156,
+          "q90": 206.09567260742188,
+          "baseline_point": 186.301853994,
+          "absolute_error": 11.67810692990625,
+          "baseline_absolute_error": 10.242106919999998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-10T00:00:00+00:00",
+          "lead": 5,
+          "actual": 211.92385876,
+          "point": 198.6591796875,
+          "q10": 175.8230743408203,
+          "q90": 216.23068237304688,
+          "baseline_point": 200.563410818,
+          "absolute_error": 13.264679072500002,
+          "baseline_absolute_error": 11.360447942000008,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-11T00:00:00+00:00",
+          "lead": 6,
+          "actual": 215.32009558000001,
+          "point": 210.34385681152344,
+          "q10": 187.19512939453125,
+          "q90": 229.11349487304688,
+          "baseline_point": 186.938436556,
+          "absolute_error": 4.976238768476577,
+          "baseline_absolute_error": 28.381659024000015,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-12T00:00:00+00:00",
+          "lead": 7,
+          "actual": 222.263459936,
+          "point": 216.496337890625,
+          "q10": 194.8638153076172,
+          "q90": 235.0563507080078,
+          "baseline_point": 206.637651804,
+          "absolute_error": 5.767122045375004,
+          "baseline_absolute_error": 15.625808132000003,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-11-12T00:00:00+00:00",
+      "context_start": "2014-09-18T00:00:00+00:00",
+      "period": "recent",
+      "mae": 8.833470712520088,
+      "evidence": [
+        {
+          "timestamp": "2014-11-13T00:00:00+00:00",
+          "lead": 1,
+          "actual": 239.606633534,
+          "point": 222.0367889404297,
+          "q10": 207.99203491210938,
+          "q90": 235.72373962402344,
+          "baseline_point": 211.98566052,
+          "absolute_error": 17.56984459357031,
+          "baseline_absolute_error": 27.620973013999986,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-11-14T00:00:00+00:00",
+          "lead": 2,
+          "actual": 223.682012828,
+          "point": 210.47476196289062,
+          "q10": 194.4506378173828,
+          "q90": 224.3664093017578,
+          "baseline_point": 227.213164292,
+          "absolute_error": 13.207250865109387,
+          "baseline_absolute_error": 3.5311514639999757,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-15T00:00:00+00:00",
+          "lead": 3,
+          "actual": 189.563654246,
+          "point": 195.2144012451172,
+          "q10": 178.89144897460938,
+          "q90": 209.456298828125,
+          "baseline_point": 205.428282246,
+          "absolute_error": 5.650746999117189,
+          "baseline_absolute_error": 15.86462800000001,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-16T00:00:00+00:00",
+          "lead": 4,
+          "actual": 182.01313893,
+          "point": 190.15118408203125,
+          "q10": 173.20965576171875,
+          "q90": 204.7667236328125,
+          "baseline_point": 176.059747074,
+          "absolute_error": 8.138045152031253,
+          "baseline_absolute_error": 5.953391855999996,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-17T00:00:00+00:00",
+          "lead": 5,
+          "actual": 208.354625974,
+          "point": 198.70755004882812,
+          "q10": 181.3798828125,
+          "q90": 213.15170288085938,
+          "baseline_point": 211.92385876,
+          "absolute_error": 9.647075925171862,
+          "baseline_absolute_error": 3.569232786000015,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-18T00:00:00+00:00",
+          "lead": 6,
+          "actual": 211.810515936,
+          "point": 213.3749542236328,
+          "q10": 195.41746520996094,
+          "q90": 228.7517852783203,
+          "baseline_point": 215.32009558000001,
+          "absolute_error": 1.564438287632811,
+          "baseline_absolute_error": 3.509579644000013,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-19T00:00:00+00:00",
+          "lead": 7,
+          "actual": 217.470160668,
+          "point": 223.5270538330078,
+          "q10": 206.60684204101562,
+          "q90": 238.7860565185547,
+          "baseline_point": 222.263459936,
+          "absolute_error": 6.056893165007807,
+          "baseline_absolute_error": 4.793299267999998,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-11-19T00:00:00+00:00",
+      "context_start": "2014-09-25T00:00:00+00:00",
+      "period": "recent",
+      "mae": 6.061165284136158,
+      "evidence": [
+        {
+          "timestamp": "2014-11-20T00:00:00+00:00",
+          "lead": 1,
+          "actual": 228.777412488,
+          "point": 220.15843200683594,
+          "q10": 205.15670776367188,
+          "q90": 234.78738403320312,
+          "baseline_point": 239.606633534,
+          "absolute_error": 8.618980481164073,
+          "baseline_absolute_error": 10.829221045999986,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-21T00:00:00+00:00",
+          "lead": 2,
+          "actual": 215.288976858,
+          "point": 212.27825927734375,
+          "q10": 195.1810760498047,
+          "q90": 227.00164794921875,
+          "baseline_point": 223.682012828,
+          "absolute_error": 3.0107175806562623,
+          "baseline_absolute_error": 8.39303597,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-22T00:00:00+00:00",
+          "lead": 3,
+          "actual": 196.05920257399998,
+          "point": 194.68783569335938,
+          "q10": 177.3882598876953,
+          "q90": 209.95672607421875,
+          "baseline_point": 189.563654246,
+          "absolute_error": 1.3713668806406076,
+          "baseline_absolute_error": 6.495548327999984,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-23T00:00:00+00:00",
+          "lead": 4,
+          "actual": 187.25928332,
+          "point": 189.7812042236328,
+          "q10": 171.8984832763672,
+          "q90": 205.1003875732422,
+          "baseline_point": 182.01313893,
+          "absolute_error": 2.521920903632804,
+          "baseline_absolute_error": 5.246144390000012,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-24T00:00:00+00:00",
+          "lead": 5,
+          "actual": 222.551242116,
+          "point": 199.23129272460938,
+          "q10": 180.6033935546875,
+          "q90": 213.82958984375,
+          "baseline_point": 208.354625974,
+          "absolute_error": 23.319949391390622,
+          "baseline_absolute_error": 14.19661614200001,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-11-25T00:00:00+00:00",
+          "lead": 6,
+          "actual": 213.939724822,
+          "point": 212.61988830566406,
+          "q10": 193.90380859375,
+          "q90": 228.1647491455078,
+          "baseline_point": 211.810515936,
+          "absolute_error": 1.3198365163359256,
+          "baseline_absolute_error": 2.1292088859999865,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-26T00:00:00+00:00",
+          "lead": 7,
+          "actual": 218.065623676,
+          "point": 220.3310089111328,
+          "q10": 203.30233764648438,
+          "q90": 235.7210693359375,
+          "baseline_point": 217.470160668,
+          "absolute_error": 2.265385235132811,
+          "baseline_absolute_error": 0.5954630079999959,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-11-26T00:00:00+00:00",
+      "context_start": "2014-10-02T00:00:00+00:00",
+      "period": "recent",
+      "mae": 13.819353888400668,
+      "evidence": [
+        {
+          "timestamp": "2014-11-27T00:00:00+00:00",
+          "lead": 1,
+          "actual": 214.940029368,
+          "point": 221.4440460205078,
+          "q10": 206.31285095214844,
+          "q90": 235.93653869628906,
+          "baseline_point": 228.777412488,
+          "absolute_error": 6.504016652507801,
+          "baseline_absolute_error": 13.837383119999998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-28T00:00:00+00:00",
+          "lead": 2,
+          "actual": 212.501729262,
+          "point": 212.88389587402344,
+          "q10": 195.60147094726562,
+          "q90": 227.35037231445312,
+          "baseline_point": 215.288976858,
+          "absolute_error": 0.3821666120234397,
+          "baseline_absolute_error": 2.7872475960000145,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-29T00:00:00+00:00",
+          "lead": 3,
+          "actual": 193.78475622,
+          "point": 196.21897888183594,
+          "q10": 178.6976318359375,
+          "q90": 211.1827850341797,
+          "baseline_point": 196.05920257399998,
+          "absolute_error": 2.434222661835946,
+          "baseline_absolute_error": 2.2744463539999913,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-11-30T00:00:00+00:00",
+          "lead": 4,
+          "actual": 213.238264002,
+          "point": 192.0104217529297,
+          "q10": 173.9703369140625,
+          "q90": 206.77577209472656,
+          "baseline_point": 187.25928332,
+          "absolute_error": 21.227842249070306,
+          "baseline_absolute_error": 25.978980681999985,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-12-01T00:00:00+00:00",
+          "lead": 5,
+          "actual": 242.498274678,
+          "point": 202.60345458984375,
+          "q10": 183.83670043945312,
+          "q90": 216.86648559570312,
+          "baseline_point": 222.551242116,
+          "absolute_error": 39.89482008815625,
+          "baseline_absolute_error": 19.947032562000004,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-12-02T00:00:00+00:00",
+          "lead": 6,
+          "actual": 232.734645642,
+          "point": 214.15997314453125,
+          "q10": 195.3881378173828,
+          "q90": 229.30104064941406,
+          "baseline_point": 213.939724822,
+          "absolute_error": 18.574672497468754,
+          "baseline_absolute_error": 18.794920820000016,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-12-03T00:00:00+00:00",
+          "lead": 7,
+          "actual": 228.061684822,
+          "point": 220.3439483642578,
+          "q10": 203.13294982910156,
+          "q90": 235.20870971679688,
+          "baseline_point": 218.065623676,
+          "absolute_error": 7.717736457742177,
+          "baseline_absolute_error": 9.996061145999988,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-12-03T00:00:00+00:00",
+      "context_start": "2014-10-09T00:00:00+00:00",
+      "period": "recent",
+      "mae": 8.934491541145093,
+      "evidence": [
+        {
+          "timestamp": "2014-12-04T00:00:00+00:00",
+          "lead": 1,
+          "actual": 235.996219864,
+          "point": 224.63232421875,
+          "q10": 206.88873291015625,
+          "q90": 241.342041015625,
+          "baseline_point": 214.940029368,
+          "absolute_error": 11.363895645250011,
+          "baseline_absolute_error": 21.056190496,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-05T00:00:00+00:00",
+          "lead": 2,
+          "actual": 224.09234761,
+          "point": 214.5010528564453,
+          "q10": 193.8383331298828,
+          "q90": 232.1242218017578,
+          "baseline_point": 212.501729262,
+          "absolute_error": 9.591294753554678,
+          "baseline_absolute_error": 11.590618347999992,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-06T00:00:00+00:00",
+          "lead": 3,
+          "actual": 192.155474594,
+          "point": 202.26065063476562,
+          "q10": 180.75106811523438,
+          "q90": 220.7097625732422,
+          "baseline_point": 193.78475622,
+          "absolute_error": 10.105176040765627,
+          "baseline_absolute_error": 1.6292816259999938,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-07T00:00:00+00:00",
+          "lead": 4,
+          "actual": 185.84369543600002,
+          "point": 201.42413330078125,
+          "q10": 179.1765594482422,
+          "q90": 220.24685668945312,
+          "baseline_point": 213.238264002,
+          "absolute_error": 15.580437864781231,
+          "baseline_absolute_error": 27.394568565999975,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-08T00:00:00+00:00",
+          "lead": 5,
+          "actual": 216.096648906,
+          "point": 212.0923614501953,
+          "q10": 189.0178680419922,
+          "q90": 230.92384338378906,
+          "baseline_point": 242.498274678,
+          "absolute_error": 4.0042874558047,
+          "baseline_absolute_error": 26.40162577199999,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-09T00:00:00+00:00",
+          "lead": 6,
+          "actual": 217.011085956,
+          "point": 222.37327575683594,
+          "q10": 199.4429473876953,
+          "q90": 241.66818237304688,
+          "baseline_point": 232.734645642,
+          "absolute_error": 5.362189800835949,
+          "baseline_absolute_error": 15.723559686000016,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-10T00:00:00+00:00",
+          "lead": 7,
+          "actual": 219.859502272,
+          "point": 226.39366149902344,
+          "q10": 204.54666137695312,
+          "q90": 245.3417510986328,
+          "baseline_point": 228.061684822,
+          "absolute_error": 6.534159227023451,
+          "baseline_absolute_error": 8.202182550000003,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-12-10T00:00:00+00:00",
+      "context_start": "2014-10-16T00:00:00+00:00",
+      "period": "recent",
+      "mae": 8.625192064409598,
+      "evidence": [
+        {
+          "timestamp": "2014-12-11T00:00:00+00:00",
+          "lead": 1,
+          "actual": 215.758019682,
+          "point": 221.1784210205078,
+          "q10": 206.2520294189453,
+          "q90": 235.7928924560547,
+          "baseline_point": 235.996219864,
+          "absolute_error": 5.420401338507816,
+          "baseline_absolute_error": 20.238200182000014,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-12T00:00:00+00:00",
+          "lead": 2,
+          "actual": 219.162764972,
+          "point": 213.22276306152344,
+          "q10": 195.93040466308594,
+          "q90": 228.15249633789062,
+          "baseline_point": 224.09234761,
+          "absolute_error": 5.940001910476553,
+          "baseline_absolute_error": 4.929582637999999,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-13T00:00:00+00:00",
+          "lead": 3,
+          "actual": 209.452023786,
+          "point": 197.97071838378906,
+          "q10": 180.6685333251953,
+          "q90": 213.51272583007812,
+          "baseline_point": 192.155474594,
+          "absolute_error": 11.48130540221095,
+          "baseline_absolute_error": 17.296549192000015,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-14T00:00:00+00:00",
+          "lead": 4,
+          "actual": 196.849619224,
+          "point": 197.36912536621094,
+          "q10": 179.794189453125,
+          "q90": 212.79246520996094,
+          "baseline_point": 185.84369543600002,
+          "absolute_error": 0.5195061422109291,
+          "baseline_absolute_error": 11.00592378799999,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-15T00:00:00+00:00",
+          "lead": 5,
+          "actual": 228.249638966,
+          "point": 210.561279296875,
+          "q10": 192.10134887695312,
+          "q90": 225.5373077392578,
+          "baseline_point": 216.096648906,
+          "absolute_error": 17.688359669124992,
+          "baseline_absolute_error": 12.15299005999998,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-12-16T00:00:00+00:00",
+          "lead": 6,
+          "actual": 231.096718844,
+          "point": 220.7939453125,
+          "q10": 202.42225646972656,
+          "q90": 236.81076049804688,
+          "baseline_point": 217.011085956,
+          "absolute_error": 10.302773531500009,
+          "baseline_absolute_error": 14.08563288800002,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-17T00:00:00+00:00",
+          "lead": 7,
+          "actual": 214.1461543,
+          "point": 223.17015075683594,
+          "q10": 206.2675323486328,
+          "q90": 239.09747314453125,
+          "baseline_point": 219.859502272,
+          "absolute_error": 9.023996456835931,
+          "baseline_absolute_error": 5.71334797199998,
+          "covered": true
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-12-17T00:00:00+00:00",
+      "context_start": "2014-10-23T00:00:00+00:00",
+      "period": "recent",
+      "mae": 10.356966218157364,
+      "evidence": [
+        {
+          "timestamp": "2014-12-18T00:00:00+00:00",
+          "lead": 1,
+          "actual": 216.358081376,
+          "point": 220.9703826904297,
+          "q10": 204.82937622070312,
+          "q90": 236.53369140625,
+          "baseline_point": 215.758019682,
+          "absolute_error": 4.612301314429686,
+          "baseline_absolute_error": 0.6000616940000043,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-19T00:00:00+00:00",
+          "lead": 2,
+          "actual": 206.028620072,
+          "point": 213.465576171875,
+          "q10": 194.5999755859375,
+          "q90": 229.2451171875,
+          "baseline_point": 219.162764972,
+          "absolute_error": 7.436956099875005,
+          "baseline_absolute_error": 13.134144899999995,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-20T00:00:00+00:00",
+          "lead": 3,
+          "actual": 189.045337286,
+          "point": 199.13111877441406,
+          "q10": 180.02621459960938,
+          "q90": 215.83343505859375,
+          "baseline_point": 209.452023786,
+          "absolute_error": 10.085781488414057,
+          "baseline_absolute_error": 20.406686500000006,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-21T00:00:00+00:00",
+          "lead": 4,
+          "actual": 204.03977797,
+          "point": 199.707275390625,
+          "q10": 180.36016845703125,
+          "q90": 216.10479736328125,
+          "baseline_point": 196.849619224,
+          "absolute_error": 4.332502579374989,
+          "baseline_absolute_error": 7.19015874599998,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-22T00:00:00+00:00",
+          "lead": 5,
+          "actual": 230.44480843,
+          "point": 213.3536376953125,
+          "q10": 193.1253662109375,
+          "q90": 229.1121826171875,
+          "baseline_point": 228.249638966,
+          "absolute_error": 17.091170734687495,
+          "baseline_absolute_error": 2.195169464000003,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-12-23T00:00:00+00:00",
+          "lead": 6,
+          "actual": 219.498078628,
+          "point": 220.4317169189453,
+          "q10": 200.5538330078125,
+          "q90": 236.8815460205078,
+          "baseline_point": 231.096718844,
+          "absolute_error": 0.9336382909453107,
+          "baseline_absolute_error": 11.598640216000007,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-24T00:00:00+00:00",
+          "lead": 7,
+          "actual": 192.94256159,
+          "point": 220.948974609375,
+          "q10": 202.588623046875,
+          "q90": 237.3456268310547,
+          "baseline_point": 214.1461543,
+          "absolute_error": 28.006413019375003,
+          "baseline_absolute_error": 21.20359271000001,
+          "covered": false
+        }
+      ]
+    },
+    {
+      "cutoff": "2014-12-24T00:00:00+00:00",
+      "context_start": "2014-10-30T00:00:00+00:00",
+      "period": "recent",
+      "mae": 30.349333560385045,
+      "evidence": [
+        {
+          "timestamp": "2014-12-25T00:00:00+00:00",
+          "lead": 1,
+          "actual": 166.698403366,
+          "point": 215.5985107421875,
+          "q10": 196.77711486816406,
+          "q90": 234.55450439453125,
+          "baseline_point": 216.358081376,
+          "absolute_error": 48.90010737618749,
+          "baseline_absolute_error": 49.65967800999999,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-12-26T00:00:00+00:00",
+          "lead": 2,
+          "actual": 166.856708026,
+          "point": 211.60165405273438,
+          "q10": 190.16168212890625,
+          "q90": 230.91073608398438,
+          "baseline_point": 206.028620072,
+          "absolute_error": 44.74494602673437,
+          "baseline_absolute_error": 39.17191204599999,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-12-27T00:00:00+00:00",
+          "lead": 3,
+          "actual": 173.727990102,
+          "point": 197.50502014160156,
+          "q10": 176.504638671875,
+          "q90": 217.34019470214844,
+          "baseline_point": 189.045337286,
+          "absolute_error": 23.777030039601556,
+          "baseline_absolute_error": 15.317347183999999,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-12-28T00:00:00+00:00",
+          "lead": 4,
+          "actual": 188.512817316,
+          "point": 200.74423217773438,
+          "q10": 179.47581481933594,
+          "q90": 220.20828247070312,
+          "baseline_point": 204.03977797,
+          "absolute_error": 12.231414861734379,
+          "baseline_absolute_error": 15.526960653999993,
+          "covered": true
+        },
+        {
+          "timestamp": "2014-12-29T00:00:00+00:00",
+          "lead": 5,
+          "actual": 191.273009036,
+          "point": 215.46205139160156,
+          "q10": 193.15237426757812,
+          "q90": 234.04379272460938,
+          "baseline_point": 230.44480843,
+          "absolute_error": 24.189042355601572,
+          "baseline_absolute_error": 39.171799394000004,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-12-30T00:00:00+00:00",
+          "lead": 6,
+          "actual": 186.240144172,
+          "point": 218.34530639648438,
+          "q10": 196.51040649414062,
+          "q90": 237.74818420410156,
+          "baseline_point": 219.498078628,
+          "absolute_error": 32.10516222448439,
+          "baseline_absolute_error": 33.257934456000015,
+          "covered": false
+        },
+        {
+          "timestamp": "2014-12-31T00:00:00+00:00",
+          "lead": 7,
+          "actual": 186.370181072,
+          "point": 212.86781311035156,
+          "q10": 193.41175842285156,
+          "q90": 231.40089416503906,
+          "baseline_point": 192.94256159,
+          "absolute_error": 26.497632038351554,
+          "baseline_absolute_error": 6.572380517999989,
+          "covered": false
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Retrospective replay, not a prospective production alarm.",
+    "Equal lead mix and fixed context length control horizon and context-length confounding; seasonal regimes and weather remain possible explanations.",
+    "Bootstrap uncertainty depends on block length and within-period stability; no repeated-testing correction.",
+    "No causal attribution, model retraining, or guarantee of pretraining-data independence."
+  ],
+  "verification": {
+    "elapsed_seconds": 12.586441100007505
+  }
+}

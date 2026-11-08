@@ -1,0 +1,12 @@
+export type Reading = { timestamp: string; value: number };
+export type Prediction = { timestamp: string; point: number; q10: number; q50: number; q90: number };
+export type Row = Prediction & { actual: number; absolute_error: number; baseline_point: number; baseline_absolute_error: number; covered: boolean; lead: number };
+export type Origin = { cutoff: string; context_start: string; period: 'reference'|'recent'; mae: number; evidence: Row[] };
+export type Metrics = { start: string; end: string; origins: number; observations: number; mae: number; rmse: number; baseline_mae: number; skill_vs_baseline: number|null; q10_q90_coverage: number };
+export type Assessment = { status: string; reference: Metrics; recent: Metrics; delta_mae: number; practical_delta_threshold: number; reference_history_scale: number; recent_half_maes: number[]; sustained: boolean; delta_mae_bootstrap_interval: number[]; uncertainty: {method:string; block_length_origins:number; resamples:number; interval_level:number; interpretation:string}; per_lead: {lead:number; reference_mae:number; recent_mae:number; delta_mae:number}[]; decision_rule:string };
+export type Replay = { request:{series_id:string; context_length:number; horizon:number; seasonal_period:number; period_origins:number}; created_at:string; model:string; revision:string; unit:string; assessment:Assessment; origins:Origin[]; limitations:string[] };
+export type Forecast = { series_id:string; model:string; revision:string; cutoff:string; unit:string; created_at:string; context_count:number; predictions:Prediction[] };
+export type Evaluation = { metrics:{mae:number;rmse:number;scaled_mae:number;q10_q90_coverage:number}; matched:number;pending:number; evidence: {timestamp:string;actual:number;absolute_error:number}[] };
+export type Catalog = { series_id:string; forecast_id:string; replay_id:string; experiment_id?:string; comparison_id?:string; provenance:{title:string;region:string;period:string;observations:number;unit:string;dataset:string;attribution:string;documentation_url:string;source_url:string;source_sha256:string|null;time_convention:string;unit_note:string;model_note:string} };
+export type Workspace = { catalog:Catalog; series:{name:string;unit:string;readings:Reading[]}; forecast:Forecast; replay:Replay; evaluation:Evaluation };
+export type PlotPoint = { timestamp:string;actual?:number;point?:number;q10?:number;q90?:number;baseline?:number };
