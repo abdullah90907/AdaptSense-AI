@@ -2,7 +2,7 @@
 
 AdaptSense AI is a forecasting and evaluation workspace for time-series data. Upload observations, run a pretrained forecast, and test whether switching forecasting methods improves predictions as new data arrives. The included demo uses real electricity demand from Victoria, Australia.
 
-![AdaptSense overview showing the Victoria demo and saved datasets](docs/screenshots/01-overview.jpg)
+![AdaptSense overview showing the Victoria demo and saved datasets](docs/screenshots/01-overview.png)
 
 ## What you can do
 
@@ -25,29 +25,29 @@ This comparison uses 210 daily targets after warm-up, in the dataset's source un
 
 The evolved RNN scored 9.030 MAE during architecture validation versus 9.869 for seasonal naive. On later replay, seasonal naive had the lowest error. Including the evolved candidate raised adaptive MAE by 0.047 on the same targets. The results describe this historical window and one evolution seed. The next-block recommendation is unscored. [Evolution report](EVOLUTIONARY_FORECASTING_REPORT.md) · [Phase 6 verification](PHASE6_REPORT.md)
 
-![Observed model scores, validation versus replay, and the next-block recommendation](docs/screenshots/05-model-results.jpg)
+![Observed model scores, validation versus replay, and the next-block recommendation](docs/screenshots/05-model-results.png)
 
 ## Walkthrough
 
 ### Import, forecast, and evaluate
 
-![Validated Victoria readings and forecast configuration](docs/screenshots/08-dataset-import.jpg)
+![Validated Victoria readings and forecast configuration](docs/screenshots/08-dataset-import.png)
 
-![Victoria demand with the Chronos forecast and quantile band](docs/screenshots/02-forecast-explorer.jpg)
+![Victoria demand with the Chronos forecast and quantile band](docs/screenshots/02-forecast-explorer.png)
 
-![Evaluation against 32 later actuals](docs/screenshots/09-forecast-evaluation.jpg)
+![Evaluation against 32 later actuals](docs/screenshots/09-forecast-evaluation.png)
 
 ### Inspect reliability
 
-![Chronological replay and deterioration evidence](docs/screenshots/03-reliability-replay.jpg)
+![Chronological replay and deterioration evidence](docs/screenshots/03-reliability-replay.png)
 
 ### Run and compare experiments
 
-![Experiment setup, saved history, and scored-block progress](docs/screenshots/04-experiment-lab.jpg)
+![Experiment setup, saved history, and scored-block progress](docs/screenshots/04-experiment-lab.png)
 
-![Model switches and their measured outcomes](docs/screenshots/06-switch-outcomes.jpg)
+![Model switches and their measured outcomes](docs/screenshots/06-switch-outcomes.png)
 
-![Matched-run comparison of the two adaptive policies](docs/screenshots/07-matched-runs.jpg)
+![Matched-run comparison of the two adaptive policies](docs/screenshots/07-matched-runs.png)
 
 ## Run locally
 
